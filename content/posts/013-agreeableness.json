@@ -1,0 +1,24 @@
+{
+ "key": "post-agreeableness",
+ "type": "post",
+ "order": 13,
+ "title": "친화성이란? 배려심 높은 성격의 장점과 대가",
+ "slug": "agreeableness",
+ "status": "publish",
+ "excerpt": "성격 5요인 중 친화성이 측정하는 것, 관계와 팀워크에서의 장점, 소득 연구로 본 대가, 점수대별 관계 관리법을 정리합니다.",
+ "meta_description": "성격 5요인 중 친화성이 측정하는 것, 관계와 팀워크에서의 장점, 소득 연구로 본 대가, 점수대별 관계 관리법을 정리합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "친화성",
+  "배려",
+  "Big Five 친화성",
+  "거절",
+  "인간관계"
+ ],
+ "comment_status": "closed"
+}

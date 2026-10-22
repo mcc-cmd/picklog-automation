@@ -1,0 +1,24 @@
+{
+ "key": "post-emotional-stability-neuroticism",
+ "type": "post",
+ "order": 11,
+ "title": "정서 안정성과 신경성 — 성격검사 점수가 말해 주는 것과 말해 주지 않는 것",
+ "slug": "emotional-stability-neuroticism",
+ "status": "publish",
+ "excerpt": "성격 5요인의 신경성·정서 안정성이 측정하는 것과 진단이 아닌 이유, 연구 결과, 점수대별로 스트레스를 다루는 방법을 정리합니다.",
+ "meta_description": "성격 5요인의 신경성·정서 안정성이 측정하는 것과 진단이 아닌 이유, 연구 결과, 점수대별로 스트레스를 다루는 방법을 정리합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "정서 안정성",
+  "신경성",
+  "스트레스",
+  "Big Five 신경성",
+  "감정 조절"
+ ],
+ "comment_status": "closed"
+}

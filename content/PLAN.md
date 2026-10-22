@@ -12,13 +12,13 @@ Status: `queued` = in content/posts, `todo` = not written yet.
 | 6 | extraversion-introversion | psychology | queued |
 | 7 | daeun-meaning | saju-guide | queued |
 | 8 | tti-changes-at-ipchun | saju-guide | queued |
-| 9 | conscientiousness | psychology | todo |
-| 10 | samjae-2027 | fortune | todo |
-| 11 | emotional-stability-neuroticism | psychology | todo |
-| 12 | ilju-meaning (60일주 개요) | saju-guide | todo |
-| 13 | agreeableness | psychology | todo |
-| 14 | sibi-unseong (12운성) | saju-guide | todo |
-| 15 | openness-intellect | psychology | todo |
+| 9 | conscientiousness | psychology | queued |
+| 10 | samjae-2027 | fortune | queued |
+| 11 | emotional-stability-neuroticism | psychology | queued |
+| 12 | ilju-meaning | saju-guide | queued |
+| 13 | agreeableness | psychology | queued |
+| 14 | sibi-unseong | saju-guide | queued |
+| 15 | openness-intellect | psychology | queued |
 | 16 | 2027-sinnyeon-unse (정미년 총론) | fortune | todo |
 | 17–28 | 2027-<animal>-tti-unse ×12 | fortune | todo (not_before ≈ 2026-11-15) |
 | 29 | mbti-vs-big-five (심화) | psychology | todo |

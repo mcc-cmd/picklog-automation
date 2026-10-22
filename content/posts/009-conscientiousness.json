@@ -1,0 +1,24 @@
+{
+ "key": "post-conscientiousness",
+ "type": "post",
+ "order": 9,
+ "title": "성실성이란? 계획성이 일·건강·관계에 미치는 영향과 함정",
+ "slug": "conscientiousness",
+ "status": "publish",
+ "excerpt": "성격 5요인 중 성실성이 측정하는 것, 직무 성과·건강 행동과의 관계를 보여 주는 연구, 완벽주의 같은 함정과 점수대별 활용법을 정리합니다.",
+ "meta_description": "성격 5요인 중 성실성이 측정하는 것, 직무 성과·건강 행동과의 관계를 보여 주는 연구, 완벽주의 같은 함정과 점수대별 활용법을 정리합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "성실성",
+  "Big Five 성실성",
+  "완벽주의",
+  "계획성",
+  "성격과 성과"
+ ],
+ "comment_status": "closed"
+}

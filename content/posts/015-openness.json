@@ -1,0 +1,24 @@
+{
+ "key": "post-openness-intellect",
+ "type": "post",
+ "order": 15,
+ "title": "개방성(지성·상상력)이란? 호기심 많은 성격에 대한 오해와 활용",
+ "slug": "openness-intellect",
+ "status": "publish",
+ "excerpt": "성격 5요인의 개방성이 지성과 경험 개방이라는 두 측면으로 이루어진 이유, 흔한 오해, 점수대별 특징과 직업 흥미와의 관계를 정리합니다.",
+ "meta_description": "성격 5요인의 개방성이 지성과 경험 개방이라는 두 측면으로 이루어진 이유, 흔한 오해, 점수대별 특징과 직업 흥미와의 관계를 정리합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "개방성",
+  "지성",
+  "상상력",
+  "Big Five 개방성",
+  "창의성"
+ ],
+ "comment_status": "closed"
+}
