@@ -11,7 +11,7 @@ Everything committed to `main` reaches the live site automatically:
   (`DAILY_POST_LIMIT`, default 2 per KST day, only between `PUBLISH_HOURS` 8–21 KST) in `order`.
 - `content/site.json` — categories, menus (Astra locations: primary, mobile_menu, footer_menu), plugin options,
   front page, old post IDs to keep private. Applied only when the file changes.
-- `publisher/run.py` — runs hourly as the Render cron job `picklog-publisher` (workspace `tea-d0c65fbuibrs73drugg0`).
+- `publisher/run.py` — runs hourly (minute 7, UTC schedule) as the Render cron job `picklog-publisher`, id `crn-dbco09lg1s2s73durj3g` (workspace `tea-d0c65fbuibrs73drugg0`).
 
 ## Checking what happened on the live site
 The site itself is not reachable from Claude's workspace. Read the cron job's logs with the Render MCP tool
