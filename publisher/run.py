@@ -21,6 +21,28 @@ import time
 import requests
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO_TARBALL = os.environ.get("CONTENT_TARBALL", "https://codeload.github.com/mcc-cmd/picklog-automation/tar.gz/refs/heads/main")
+
+
+def fetch_latest_content():
+    """Use the newest content/ and dist/ from GitHub main, so runs never depend on a Render redeploy."""
+    global ROOT
+    if os.environ.get("CONTENT_SOURCE", "github") != "github":
+        return
+    import io, tarfile, tempfile
+    try:
+        r = requests.get(REPO_TARBALL, timeout=60)
+        r.raise_for_status()
+        tmp = tempfile.mkdtemp(prefix="picklog-")
+        with tarfile.open(fileobj=io.BytesIO(r.content), mode="r:gz") as tf:
+            members = [m for m in tf.getmembers() if "/content/" in m.name or "/dist/plugin.json" in m.name]
+            tf.extractall(tmp, members=members, filter="data")
+        top = os.path.join(tmp, os.listdir(tmp)[0])
+        if os.path.isdir(os.path.join(top, "content")):
+            ROOT = top
+            print("content: GitHub main (latest)", flush=True)
+    except Exception as e:  # fall back to the deployed copy
+        print("content: using deployed copy (", e, ")", flush=True)
 WP_URL = os.environ.get("WP_URL", "https://picklog.kr").rstrip("/")
 AUTH = (os.environ.get("WP_USER", ""), os.environ.get("WP_APP_PASSWORD", "").replace(" ", ""))
 LIMIT = int(os.environ.get("DAILY_POST_LIMIT", "2"))
@@ -88,6 +110,7 @@ def upsert(item):
 
 
 def main():
+    fetch_latest_content()
     if not AUTH[0] or not AUTH[1]:
         log("ERROR: WP_USER / WP_APP_PASSWORD are not set in the Render environment."); return 1
     r = api("GET", "state")
