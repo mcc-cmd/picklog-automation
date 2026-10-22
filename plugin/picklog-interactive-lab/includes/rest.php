@@ -26,6 +26,7 @@ final class Picklog_Lab_REST {
 		$r('/menu', 'POST', 'menu');
 		$r('/options', 'POST', 'options');
 		$r('/self-update', 'POST', 'self_update');
+		$r('/lock', 'POST', 'lock');
 	}
 
 	static function find_by_key($key) {
@@ -203,6 +204,22 @@ final class Picklog_Lab_REST {
 		}
 		if (isset($d['hash'])) update_option('picklog_site_hash', sanitize_text_field($d['hash']), false);
 		return ['updated' => $done];
+	}
+
+	/** Single-run lock for the publisher. add_option() is an atomic INSERT, so only one run can hold it. */
+	static function lock(WP_REST_Request $req) {
+		$d = $req->get_json_params();
+		$owner = sanitize_text_field($d['owner'] ?? '');
+		$name = 'picklog_publisher_lock';
+		if (($d['action'] ?? '') === 'release') {
+			$cur = get_option($name);
+			if (is_array($cur) && ($cur['owner'] ?? '') === $owner) delete_option($name);
+			return ['released' => true];
+		}
+		$cur = get_option($name);
+		if (is_array($cur) && (time() - (int) ($cur['time'] ?? 0)) > 15 * MINUTE_IN_SECONDS) delete_option($name); // stale
+		$ok = add_option($name, ['owner' => $owner, 'time' => time()], '', 'no');
+		return ['acquired' => (bool) $ok, 'holder' => $ok ? $owner : (get_option($name)['owner'] ?? '')];
 	}
 
 	/** Pull the newest release from GitHub immediately instead of waiting for WP-cron auto-updates. */

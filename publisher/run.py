@@ -134,6 +134,18 @@ def main():
         return 1
     r.raise_for_status()
     state = r.json()
+    owner = f"{os.environ.get('RENDER_INSTANCE_ID', 'local')}-{int(time.time())}"
+    lk = api("POST", "lock", {"action": "acquire", "owner": owner})
+    if lk.status_code == 200 and not lk.json().get("acquired"):
+        log(f"SKIP: another publisher run is in progress ({lk.json().get('holder')})."); return 0
+    try:
+        return run(state)
+    finally:
+        if lk.status_code == 200:
+            api("POST", "lock", {"action": "release", "owner": owner})
+
+
+def run(state):
     log(f"site plugin={state['plugin']} wp={state['wp']} theme={state['theme']} items={len(state['items'])}")
 
     # 1. plugin self-update
