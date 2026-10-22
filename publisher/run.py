@@ -250,7 +250,7 @@ def run(state):
         today = now.date().isoformat()
         new = [i["title"] for i in state["items"] if i["key"] and i["type"] == "post" and i["status"] == "publish" and i["date"][:10] == today]
         live = sum(1 for i in state["items"] if i["key"] and i["type"] == "post" and i["status"] == "publish")
-        lines = [f"📋 피클로그 {now.month}/{now.day} 발행 보고"]
+        lines = [f"📋 픽로그 {now.month}/{now.day} 발행 보고"]
         lines.append(f"✅ 오늘 새 글 {len(new)}개" if new else "오늘 새로 발행된 글은 없어요")
         lines += ["· " + t[:28] for t in new[:3]]
         lines.append(f"📚 공개 글 {live}개 · 대기 {STATS.get('waiting', 0)}개")
@@ -266,5 +266,5 @@ if __name__ == "__main__":
         log(f"ERROR: publisher crashed: {type(e).__name__}: {e}")
         code = 1
     if ERRORS:
-        notify("⚠️ 피클로그 자동 발행 오류\n" + ERRORS[0][7:170], key="picklog-error", cooldown_hours=6)
+        notify("⚠️ 픽로그 자동 발행 오류\n" + ERRORS[0][7:170], key="picklog-error", cooldown_hours=6)
     sys.exit(code)
