@@ -53,8 +53,29 @@ S = requests.Session()
 S.headers.update({"User-Agent": "picklog-publisher/1.0", "Accept": "application/json"})
 
 
+ERRORS = []
+NOTIFY_URL = os.environ.get("HUB_NOTIFY_URL", "https://ai-content-automation-center.onrender.com/api/notify")
+NOTIFY_TOKEN = os.environ.get("HUB_NOTIFY_TOKEN", "")
+REPORT_HOUR = int(os.environ.get("REPORT_HOUR", "21"))  # KST hour of the daily KakaoTalk summary
+
+
 def log(*a):
-    print(*a, flush=True)
+    msg = " ".join(str(x) for x in a)
+    if msg.startswith("ERROR"):
+        ERRORS.append(msg)
+    print(msg, flush=True)
+
+
+def notify(text, key="", cooldown_hours=6):
+    """KakaoTalk '나에게 보내기' via the AI automation center hub (its existing Kakao connection). Never raises."""
+    if not NOTIFY_TOKEN:
+        return
+    try:
+        r = requests.post(NOTIFY_URL, json={"text": text[:200], "key": key, "cooldown_hours": cooldown_hours},
+                          headers={"X-Notify-Token": NOTIFY_TOKEN}, timeout=120)
+        print(f"notify: {r.status_code} {r.text[:160]}", flush=True)
+    except requests.RequestException as e:
+        print(f"notify failed: {e}", flush=True)
 
 
 def api(method, route, body=None, retries=3):
@@ -125,8 +146,8 @@ def main():
         hint = {
             "incorrect_password": "password rejected — WP_APP_PASSWORD is not the application password of this user",
             "invalid_username": "WP_USER does not exist on the site",
-            "rest_forbidden": "no credentials reached WordPress — the host/security plugin may strip the Authorization header",
-            "rest_not_logged_in": "no credentials reached WordPress — the host/security plugin may strip the Authorization header",
+            "rest_forbidden": "credentials not accepted — wrong/revoked application password, or the host strips the Authorization header",
+            "rest_not_logged_in": "credentials not accepted — wrong/revoked application password, or the host strips the Authorization header",
         }.get(code, "unknown")
         placeholder = "PASTE" in pw.upper()
         log(f"ERROR: authentication failed (HTTP {r.status_code}, code={code}) — {hint}. "
@@ -143,6 +164,9 @@ def main():
     finally:
         if lk.status_code == 200:
             api("POST", "lock", {"action": "release", "owner": owner})
+
+
+STATS = {}
 
 
 def run(state):
@@ -204,6 +228,7 @@ def run(state):
         if upsert(item):
             recorded[item["key"]] = item["hash"]; budget -= 1
     log(f"posts: published_today={published_today} remaining_budget={budget} waiting_in_queue={waiting}")
+    STATS["waiting"] = waiting
 
     # 5. re-sync anything whose content or resolved links changed
     for item in pages + posts:
@@ -220,8 +245,26 @@ def run(state):
             "unmanaged_public": [[i["id"], i["type"], i["title"][:24]] for i in state["items"] if not i["key"] and i["status"] == "publish"],
             "options": state["options"], "categories": [[c["slug"], c["count"]] for c in state["categories"]]}
     log("PICKLOG_STATE " + json.dumps(snap, ensure_ascii=False))
+    now = dt.datetime.now(KST)
+    if now.hour == REPORT_HOUR:
+        today = now.date().isoformat()
+        new = [i["title"] for i in state["items"] if i["key"] and i["type"] == "post" and i["status"] == "publish" and i["date"][:10] == today]
+        live = sum(1 for i in state["items"] if i["key"] and i["type"] == "post" and i["status"] == "publish")
+        lines = [f"📋 피클로그 {now.month}/{now.day} 발행 보고"]
+        lines.append(f"✅ 오늘 새 글 {len(new)}개" if new else "오늘 새로 발행된 글은 없어요")
+        lines += ["· " + t[:28] for t in new[:3]]
+        lines.append(f"📚 공개 글 {live}개 · 대기 {STATS.get('waiting', 0)}개")
+        lines.append("⚠️ 오류 있음 (로그 확인)" if ERRORS else "오류 없음")
+        notify("\n".join(lines), key=f"picklog-daily-{today}", cooldown_hours=20)
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        code = main()
+    except Exception as e:  # unexpected crash: report it, then fail the run
+        log(f"ERROR: publisher crashed: {type(e).__name__}: {e}")
+        code = 1
+    if ERRORS:
+        notify("⚠️ 피클로그 자동 발행 오류\n" + ERRORS[0][7:170], key="picklog-error", cooldown_hours=6)
+    sys.exit(code)
