@@ -1,0 +1,24 @@
+{
+ "key": "post-ipip-personality-items",
+ "type": "post",
+ "order": 4,
+ "title": "IPIP란? 무료 공개 성격검사 문항의 신뢰도와 한계",
+ "slug": "ipip-personality-items",
+ "status": "publish",
+ "excerpt": "International Personality Item Pool(IPIP)이 무엇인지, Big Five 50문항과 Mini-IPIP 20문항의 신뢰도, 채점 방식, 한국어판의 한계를 솔직하게 정리합니다.",
+ "meta_description": "International Personality Item Pool(IPIP)이 무엇인지, Big Five 50문항과 Mini-IPIP 20문항의 신뢰도, 채점 방식, 한국어판의 한계를 솔직하게 정리합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "IPIP",
+  "성격검사 문항",
+  "Mini-IPIP",
+  "신뢰도",
+  "Big Five 검사"
+ ],
+ "comment_status": "closed"
+}

@@ -1,0 +1,24 @@
+{
+ "key": "post-extraversion-introversion",
+ "type": "post",
+ "order": 6,
+ "title": "외향성이란? 내향적인 사람에 대한 오해와 점수별 특징",
+ "slug": "extraversion-introversion",
+ "status": "publish",
+ "excerpt": "성격 5요인 중 외향성이 실제로 무엇을 측정하는지, 점수가 높고 낮을 때의 특징, 내향성에 대한 오해와 활용법을 연구를 바탕으로 설명합니다.",
+ "meta_description": "성격 5요인 중 외향성이 실제로 무엇을 측정하는지, 점수가 높고 낮을 때의 특징, 내향성에 대한 오해와 활용법을 연구를 바탕으로 설명합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "외향성",
+  "내향성",
+  "Big Five 외향성",
+  "양향성",
+  "성격 특성"
+ ],
+ "comment_status": "closed"
+}

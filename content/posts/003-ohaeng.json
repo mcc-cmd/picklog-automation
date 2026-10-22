@@ -1,0 +1,24 @@
+{
+ "key": "post-ohaeng-sangsaeng-sanggeuk",
+ "type": "post",
+ "order": 3,
+ "title": "오행 상생·상극 쉽게 이해하기 — 목·화·토·금·수와 내 사주 분포 읽기",
+ "slug": "ohaeng-sangsaeng-sanggeuk",
+ "status": "publish",
+ "excerpt": "오행 목·화·토·금·수의 상징, 상생(목→화→토→금→수)과 상극(목→토→수→화→금)의 원리, 내 사주의 오행 분포를 읽는 법을 예시로 설명합니다.",
+ "meta_description": "오행 목·화·토·금·수의 상징, 상생(목→화→토→금→수)과 상극(목→토→수→화→금)의 원리, 내 사주의 오행 분포를 읽는 법을 예시로 설명합니다.",
+ "categories": [
+  {
+   "name": "사주 가이드",
+   "slug": "saju-guide"
+  }
+ ],
+ "tags": [
+  "오행",
+  "상생",
+  "상극",
+  "목화토금수",
+  "사주 오행"
+ ],
+ "comment_status": "closed"
+}

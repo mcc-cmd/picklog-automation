@@ -1,0 +1,9 @@
+{
+ "key": "page-about",
+ "type": "page",
+ "target_id": 30,
+ "title": "PICKLOG 소개",
+ "slug": "about",
+ "status": "publish",
+ "meta_description": "PICKLOG는 정밀 만세력 사주 계산기와 IPIP 성격검사를 운영하는 자기이해 콘텐츠 사이트입니다. 운영 원칙과 콘텐츠 기준을 소개합니다."
+}

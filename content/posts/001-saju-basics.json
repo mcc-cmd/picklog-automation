@@ -1,0 +1,24 @@
+{
+ "key": "post-saju-palja-basics",
+ "type": "post",
+ "order": 1,
+ "title": "사주팔자 보는 법 — 네 기둥 여덟 글자, 처음부터 읽기",
+ "slug": "saju-palja-basics",
+ "status": "publish",
+ "excerpt": "사주팔자의 뜻, 천간과 지지, 60갑자, 그리고 일간·월지·오행·십성 순서로 사주 원국을 읽는 방법을 실제 예시로 설명합니다.",
+ "meta_description": "사주팔자의 뜻, 천간과 지지, 60갑자, 그리고 일간·월지·오행·십성 순서로 사주 원국을 읽는 방법을 실제 예시로 설명합니다.",
+ "categories": [
+  {
+   "name": "사주 가이드",
+   "slug": "saju-guide"
+  }
+ ],
+ "tags": [
+  "사주팔자",
+  "사주 보는 법",
+  "일간",
+  "천간",
+  "지지"
+ ],
+ "comment_status": "closed"
+}

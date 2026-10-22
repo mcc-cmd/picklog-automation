@@ -1,0 +1,9 @@
+{
+ "key": "page-contact",
+ "type": "page",
+ "target_id": 32,
+ "title": "문의하기",
+ "slug": "contact",
+ "status": "publish",
+ "meta_description": "PICKLOG 문의 안내: 계산 오류 제보, 콘텐츠 수정 요청, 제휴 문의 방법."
+}

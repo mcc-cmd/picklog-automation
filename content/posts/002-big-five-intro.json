@@ -1,0 +1,24 @@
+{
+ "key": "post-big-five-personality",
+ "type": "post",
+ "order": 2,
+ "title": "Big Five 성격 5요인이란? 다섯 가지 특성과 MBTI와의 차이",
+ "slug": "big-five-personality",
+ "status": "publish",
+ "excerpt": "성격 5요인 모델(Big Five)이 어떻게 만들어졌는지, 개방성·성실성·외향성·친화성·신경성의 뜻과 MBTI와의 차이를 연구를 바탕으로 정리합니다.",
+ "meta_description": "성격 5요인 모델(Big Five)이 어떻게 만들어졌는지, 개방성·성실성·외향성·친화성·신경성의 뜻과 MBTI와의 차이를 연구를 바탕으로 정리합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "Big Five",
+  "성격 5요인",
+  "OCEAN",
+  "MBTI 차이",
+  "성격검사"
+ ],
+ "comment_status": "closed"
+}
