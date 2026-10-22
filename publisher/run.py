@@ -117,7 +117,21 @@ def main():
     if r.status_code == 404 or (r.status_code == 200 and "plugin" not in r.text):
         log("WAITING: PICKLOG plugin v2.1+ is not active on the site yet (route /picklog/v1/state missing)."); return 0
     if r.status_code in (401, 403):
-        log("ERROR: authentication failed — check WP_USER and WP_APP_PASSWORD (application password)."); return 1
+        try:
+            code = r.json().get("code", "")
+        except ValueError:
+            code = "non-json"
+        pw = AUTH[1]
+        hint = {
+            "incorrect_password": "password rejected — WP_APP_PASSWORD is not the application password of this user",
+            "invalid_username": "WP_USER does not exist on the site",
+            "rest_forbidden": "no credentials reached WordPress — the host/security plugin may strip the Authorization header",
+            "rest_not_logged_in": "no credentials reached WordPress — the host/security plugin may strip the Authorization header",
+        }.get(code, "unknown")
+        placeholder = "PASTE" in pw.upper()
+        log(f"ERROR: authentication failed (HTTP {r.status_code}, code={code}) — {hint}. "
+            f"user={AUTH[0]} password_length={len(pw)} placeholder_still_set={placeholder}")
+        return 1
     r.raise_for_status()
     state = r.json()
     log(f"site plugin={state['plugin']} wp={state['wp']} theme={state['theme']} items={len(state['items'])}")
