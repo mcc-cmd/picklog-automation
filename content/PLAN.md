@@ -25,9 +25,10 @@ Status: `live` = published on the site, `queued` = in content/posts waiting for 
 | 30 | jijanggan (지장간) | saju-guide | queued |
 | 31 | singang-sinyak (신강·신약) | saju-guide | queued |
 | 32 | personality-and-relationships (Big Five와 연애 연구) | psychology | queued |
-| 33 | ilji-relations (합충형파해 심화) | saju-guide | todo |
+| 33 | jiji-hapchung-relations (합충형파해 심화) | saju-guide | queued |
 
 After approval: 60 ilju pages (2–3 per day), per-test landing pages, Coupang links (settings only).
 
 Note (2026-10-26): posts 1–15 were written before the 2,500-character rule was enforced (about 1,100–1,500 Hangul characters each). Extend them gradually (one or two per run) before the AdSense re-application.
+Extended to 2,500+: 8 (2026-10-26).
 Next: write 17–28 (2027 띠별, not_before 2026-11-15) so they are ready when the gate opens; 29–32 keep the drip going until then.
