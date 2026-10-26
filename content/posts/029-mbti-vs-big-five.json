@@ -1,0 +1,24 @@
+{
+ "key": "post-mbti-vs-big-five",
+ "type": "post",
+ "order": 29,
+ "title": "MBTI와 Big Five, 무엇이 다를까? 연구로 본 상관관계와 유형 검사의 한계",
+ "slug": "mbti-vs-big-five",
+ "status": "publish",
+ "excerpt": "MBTI 네 축이 Big Five의 어떤 요인과 얼마나 겹치는지, 유형 검사가 재검사에서 결과가 바뀌는 이유, 점수형 검사가 주는 정보의 차이를 연구 결과와 예시로 정리합니다.",
+ "meta_description": "MBTI 네 축이 Big Five의 어떤 요인과 얼마나 겹치는지, 유형 검사가 재검사에서 결과가 바뀌는 이유, 점수형 검사가 주는 정보의 차이를 연구 결과와 예시로 정리합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "MBTI",
+  "Big Five",
+  "MBTI 신뢰도",
+  "성격검사 비교",
+  "성격 5요인"
+ ],
+ "comment_status": "closed"
+}
