@@ -20,7 +20,7 @@ Status: `live` = published on the site, `queued` = in content/posts waiting for 
 | 14 | sibi-unseong | saju-guide | queued |
 | 15 | openness-intellect | psychology | queued |
 | 16 | 2027-sinnyeon-unse (정미년 총론) | fortune | queued |
-| 17–28 | 2027-<animal>-tti-unse ×12 | fortune | todo (not_before ≈ 2026-11-15) |
+| 17–28 | 2027-<animal>-tti-unse ×12 | fortune | queued (not_before 2026-11-15) |
 | 29 | mbti-vs-big-five (심화) | psychology | queued |
 | 30 | jijanggan (지장간) | saju-guide | queued |
 | 31 | singang-sinyak (신강·신약) | saju-guide | queued |
