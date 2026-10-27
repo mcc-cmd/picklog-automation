@@ -193,6 +193,18 @@ final class Picklog_Lab_REST {
 		if (!empty($d['categories'])) { self::term_ids($d['categories'], 'category'); $done[] = 'categories'; }
 		if (isset($d['plugin']) && is_array($d['plugin'])) { Picklog_Lab_Settings::update($d['plugin']); $done[] = 'plugin'; }
 		$site = $d['site'] ?? [];
+		if (!empty($site['prune_empty_categories'])) {
+			// Remove leftover categories from the old blog: only ones with no published posts and not listed in site.json.
+			$keep = [];
+			foreach ((array) ($d['categories'] ?? []) as $c) if (is_array($c) && !empty($c['slug'])) $keep[] = $c['slug'];
+			$default = (int) get_option('default_category');
+			$removed = [];
+			foreach (get_terms(['taxonomy' => 'category', 'hide_empty' => false]) as $t) {
+				if ((int) $t->term_id === $default || in_array($t->slug, $keep, true) || (int) $t->count > 0) continue;
+				if (!is_wp_error(wp_delete_term($t->term_id, 'category'))) $removed[] = $t->slug;
+			}
+			$done[] = 'pruned:' . implode(',', $removed);
+		}
 		if (!empty($site['timezone_string']) && in_array($site['timezone_string'], timezone_identifiers_list(), true)) { update_option('timezone_string', $site['timezone_string']); update_option('gmt_offset', ''); $done[] = 'timezone'; }
 		foreach (['blogname', 'blogdescription'] as $k) if (isset($site[$k])) { update_option($k, sanitize_text_field($site[$k])); $done[] = $k; }
 		if (isset($site['show_on_front']) && in_array($site['show_on_front'], ['posts', 'page'], true)) { update_option('show_on_front', $site['show_on_front']); $done[] = 'show_on_front'; }

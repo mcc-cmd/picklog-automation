@@ -4,7 +4,8 @@
   "blogdescription": "정밀 만세력 사주·운세와 IPIP 성격검사",
   "show_on_front": "page",
   "page_on_front_key": "page-home",
-  "timezone_string": "Asia/Seoul"
+  "timezone_string": "Asia/Seoul",
+  "prune_empty_categories": true
  },
  "categories": [
   {
