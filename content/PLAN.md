@@ -31,4 +31,4 @@ After approval: 60 ilju pages (2–3 per day), per-test landing pages, Coupang l
 
 Note (2026-10-26): posts 1–15 were written before the 2,500-character rule was enforced (about 1,100–1,500 Hangul characters each). Extend them gradually (one or two per run) before the AdSense re-application.
 Extended to 2,500+: 8 (2026-10-26).
-Next: write 17–28 (2027 띠별, not_before 2026-11-15) so they are ready when the gate opens; 29–32 keep the drip going until then.
+Next: 17–28 are written (2027 띠별, gate opens 2026-11-15); keep 29–33 dripping until then, then write the next backlog after approval.
