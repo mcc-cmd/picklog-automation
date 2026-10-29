@@ -1,0 +1,24 @@
+{
+ "key": "post-big-five-and-work",
+ "type": "post",
+ "order": 38,
+ "title": "성격과 일 — Big Five와 직무 성과·직무 만족·리더십 연구 정리",
+ "slug": "big-five-and-work",
+ "status": "publish",
+ "excerpt": "성실성은 거의 모든 직업에서 성과와 관련되고, 정서적 안정성은 직무 만족, 외향성은 리더십과 가장 뚜렷하게 관련됩니다. 대표 메타분석 수치와 읽는 법, 검사 결과를 일에 참고하는 예시를 정리합니다.",
+ "meta_description": "성실성은 거의 모든 직업에서 성과와 관련되고, 정서적 안정성은 직무 만족, 외향성은 리더십과 가장 뚜렷하게 관련됩니다. 대표 메타분석 수치와 읽는 법, 검사 결과를 일에 참고하는 예시를 정리합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "Big Five",
+  "직무 성과",
+  "직무 만족",
+  "리더십",
+  "홀랜드 직업 흥미"
+ ],
+ "comment_status": "closed"
+}
