@@ -260,16 +260,24 @@ final class Picklog_Lab_REST {
 	/** 실제 사이트 화면이 새 버전인지 서버 쪽에서 확인: 캐시 관련 응답 헤더와 히어로 유무(일반 주소 / 캐시를 건너뛰는 주소). */
 	static function cache_probe() {
 		$out = [];
-		foreach (['plain' => home_url('/saju/'), 'bust' => add_query_arg('pkprobe', time(), home_url('/saju/'))] as $k => $url) {
-			$r = wp_remote_get($url, ['timeout' => 12, 'sslverify' => false, 'redirection' => 3, 'headers' => ['User-Agent' => 'Mozilla/5.0 (picklog-probe)']]);
+		$mobile = 'Mozilla/5.0 (Linux; Android 14; SM-S918N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Mobile Safari/537.36';
+		$probes = ['plain' => [home_url('/saju/'), 'Mozilla/5.0 (picklog-probe)'], 'mobile' => [home_url('/saju/'), $mobile],
+			'mobile_cat' => [home_url('/category/psychology/'), $mobile], 'bust' => [add_query_arg('pkprobe', time(), home_url('/saju/')), $mobile]];
+		foreach ($probes as $k => $pu) {
+			list($url, $ua) = $pu;
+			$r = wp_remote_get($url, ['timeout' => 12, 'sslverify' => false, 'redirection' => 3, 'headers' => ['User-Agent' => $ua]]);
 			if (is_wp_error($r)) { $out[$k] = ['error' => $r->get_error_message()]; continue; }
 			$h = wp_remote_retrieve_headers($r); $body = wp_remote_retrieve_body($r); $hd = [];
 			foreach (['server', 'x-cache', 'x-cache-status', 'cf-cache-status', 'x-litespeed-cache', 'x-proxy-cache', 'x-nginx-cache', 'age', 'cache-control', 'x-powered-by', 'x-cache-enabled', 'x-srcache-fetch-status', 'x-hcdn-cache-status'] as $n) {
 				if (isset($h[$n])) $hd[$n] = is_array($h[$n]) ? implode(',', $h[$n]) : (string) $h[$n];
 			}
 			preg_match('/<!--[^>]{0,160}(cache|Cache|rocket|LiteSpeed|Performance)[^>]{0,160}-->/', $body, $m);
-			$out[$k] = ['code' => wp_remote_retrieve_response_code($r), 'hero' => strpos($body, 'pk-hero-saju') !== false, 'plugin_ver' => preg_match('/app\.css\?ver=([0-9.]+)/', $body, $v) ? $v[1] : '', 'headers' => $hd, 'comment' => $m[0] ?? ''];
+			$out[$k] = ['code' => wp_remote_retrieve_response_code($r), 'hero' => strpos($body, 'pk-hero') !== false, 'plugin_ver' => preg_match('/app\.css\?ver=([0-9.]+)/', $body, $v) ? $v[1] : '', 'headers' => $hd, 'comment' => $m[0] ?? ''];
 		}
+		// 실제 화면(휴대폰 포함)에 새 버전이 안 나오면 캐시를 비운다(W3 Total Cache 등). 한 시간에 한 번 이하.
+		$stale = false;
+		foreach ($out as $o) if (empty($o['error']) && empty($o['hero'])) $stale = true;
+		if ($stale && !get_transient('picklog_probe_purged')) { set_transient('picklog_probe_purged', 1, 50 * MINUTE_IN_SECONDS); $out['purged'] = self::purge_caches(); }
 		return $out;
 	}
 
