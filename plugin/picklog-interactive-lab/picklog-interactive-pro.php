@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PICKLOG Interactive Lab
  * Description: IPIP 기반 심리테스트, 정밀 만세력 사주·운세, 사주 궁합. 숏코드: [picklog_interactive], [picklog_interactive test="love"], [picklog_fortune], [picklog_compatibility], [picklog_ipip50]
- * Version: 2.4.0
+ * Version: 2.5.0
  * Requires PHP: 7.4
  * Text Domain: picklog-interactive
  */
@@ -13,7 +13,7 @@ require_once __DIR__ . '/includes/rest.php';
 require_once __DIR__ . '/includes/updater.php';
 
 final class Picklog_Interactive_Lab {
-	const VERSION = '2.4.0';
+	const VERSION = '2.5.0';
 	const SHORTCODES = ['picklog_interactive', 'picklog_personality', 'picklog_ipip50', 'picklog_fortune', 'picklog_saju', 'picklog_compatibility', 'picklog_ttibti'];
 	const TESTS = ['saju', 'compat', 'type', 'bigfive', 'love', 'relation', 'work', 'money', 'stress', 'career', 'animal'];
 
@@ -73,15 +73,35 @@ final class Picklog_Interactive_Lab {
 	static function personality() { return self::mount('personality'); }
 
 	/** Server-rendered list of recent posts: [picklog_latest category="saju-guide" count="6" title="..."] */
+	/** 최신 글 그림 카드. [picklog_latest category="saju-guide" count="3" title="사주 가이드" more="1"] — 대표 이미지가 없으면 분야 그림을 돌려 씀 */
 	static function latest($atts = []) {
-		$a = shortcode_atts(['category' => '', 'count' => 6, 'title' => ''], $atts);
-		$q = new WP_Query(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => max(1, min(24, (int) $a['count'])), 'category_name' => sanitize_title($a['category']), 'ignore_sticky_posts' => true, 'no_found_rows' => true]);
+		$a = shortcode_atts(['category' => '', 'count' => 6, 'title' => '', 'more' => ''], $atts);
+		$slug = sanitize_title($a['category']);
+		$q = new WP_Query(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => max(1, min(24, (int) $a['count'])), 'category_name' => $slug, 'ignore_sticky_posts' => true, 'no_found_rows' => true]);
 		if (!$q->have_posts()) return '';
+		if (!wp_style_is('picklog-il', 'registered')) self::register();
 		wp_enqueue_style('picklog-il');
-		$h = '<section class="pil-latest">' . ($a['title'] ? '<h2 class="pil-latest-title">' . esc_html($a['title']) . '</h2>' : '') . '<ul class="pil-latest-list">';
+		$u = plugins_url('assets/', __FILE__);
+		$art = [
+			'saju-guide' => ['card-saju.webp', 'saju-hero-autumn.webp', 'card-money.webp', 'saju-hero-winter.webp', 'card-animal.webp', 'saju-hero-spring.webp'],
+			'fortune' => ['saju-hero-winter.webp', 'card-saju.webp', 'saju-hero-spring.webp'],
+			'psychology' => ['card-bigfive.webp', 'card-type.webp', 'card-relation.webp', 'card-work.webp', 'card-stress.webp', 'card-career.webp', 'card-love.webp'],
+		];
+		$tone = $slug === 'psychology' ? 'psy' : 'saju';
+		$h = '<section class="pil-app pil-latest pil-latest-' . $tone . '">';
+		$more = '';
+		if ($a['more'] && ($cat = get_category_by_slug($slug))) $more = '<a class="pil-latest-more" href="' . esc_url(get_category_link($cat)) . '">전체 보기 →</a>';
+		if ($a['title'] || $more) $h .= '<div class="pil-latest-head">' . ($a['title'] ? '<h2 class="pil-latest-title">' . esc_html($a['title']) . '</h2>' : '') . $more . '</div>';
+		$h .= '<ul class="pil-latest-list">';
 		foreach ($q->posts as $p) {
 			$cats = get_the_category($p->ID);
-			$h .= '<li><a href="' . esc_url(get_permalink($p)) . '"><span class="pil-latest-cat">' . esc_html($cats ? $cats[0]->name : '') . '</span><strong>' . esc_html(get_the_title($p)) . '</strong><span class="pil-latest-ex">' . esc_html(wp_trim_words(get_the_excerpt($p), 28, '…')) . '</span></a></li>';
+			$cs = $cats ? $cats[0]->slug : $slug;
+			$pool = $art[$cs] ?? $art['saju-guide'];
+			$img = get_the_post_thumbnail_url($p, 'medium_large');
+			if (!$img) $img = $u . $pool[$p->ID % count($pool)];
+			$h .= '<li><a href="' . esc_url(get_permalink($p)) . '"><span class="pil-latest-img"><img src="' . esc_url($img) . '" alt="" width="800" height="400" loading="lazy" decoding="async"></span>'
+				. '<span class="pil-latest-txt"><span class="pil-latest-cat">' . esc_html($cats ? $cats[0]->name : '') . '</span><strong>' . esc_html(get_the_title($p)) . '</strong>'
+				. '<span class="pil-latest-ex">' . esc_html(wp_trim_words(get_the_excerpt($p), 22, '…')) . '</span></span></a></li>';
 		}
 		return $h . '</ul></section>';
 	}
