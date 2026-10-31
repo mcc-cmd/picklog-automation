@@ -435,6 +435,13 @@ body.picklog-test-page:has(.pk-hero,.tt-hero) .ast-single-entry-banner,
 body.picklog-test-page:has(.pk-hero,.tt-hero) .page-title{display:none!important}
 body:has(.pk-hero) .pil-wrap>.pil-head{display:none}
 .pil-app.pk-hero-wrap{margin:8px auto 18px}
+body.picklog-cat-hero:has(.pk-hero) .ast-archive-description,
+body.picklog-cat-hero:has(.pk-hero) .ast-archive-entry-banner,
+body.picklog-cat-hero:has(.pk-hero) .page-header{display:none!important}
+body.picklog-cat-hero .pil-app.pk-hero-wrap{margin:0 auto 24px}
+.pk-hero-cta-row{margin-top:18px!important}
+.pil-app .pk-hero-cta{display:inline-block;background:#1c223a;color:#fff!important;font-weight:800;font-size:15px;border-radius:12px;padding:12px 20px;text-decoration:none!important;box-shadow:0 8px 18px rgba(28,34,58,.18)}
+.pil-app .pk-hero-cta:hover{background:#2c3557}
 .pk-hero{--a:#efeaff;--b:#fff6e6;--mk:#ffd54a;position:relative;overflow:hidden;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(16px,3cqw,36px);align-items:center;
   margin:0;padding:clamp(22px,4.5cqw,48px);border-radius:30px;border:1px solid rgba(28,34,58,.08);
   background:radial-gradient(90% 120% at 100% 0%,var(--b) 0%,transparent 60%),linear-gradient(135deg,var(--a),#fff 70%)}
