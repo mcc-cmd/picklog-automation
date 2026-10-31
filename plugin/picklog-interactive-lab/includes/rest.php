@@ -27,6 +27,7 @@ final class Picklog_Lab_REST {
 		$r('/options', 'POST', 'options');
 		$r('/self-update', 'POST', 'self_update');
 		$r('/lock', 'POST', 'lock');
+		$r('/purge', 'POST', 'purge');
 	}
 
 	static function find_by_key($key) {
@@ -61,6 +62,7 @@ final class Picklog_Lab_REST {
 			'active_plugins' => get_option('active_plugins'),
 			'site_hash' => (string) get_option('picklog_site_hash', ''),
 			'now' => current_time('mysql'),
+			'cache_probe' => self::cache_probe(),
 		];
 	}
 
@@ -118,6 +120,7 @@ final class Picklog_Lab_REST {
 			update_post_meta($id, 'site-content-layout', 'page-builder');
 			update_post_meta($id, 'ast-site-content-layout', 'full-width-container');
 		}
+		self::purge_caches($id);
 		return ['id' => $id, 'action' => $action, 'link' => get_permalink($id), 'status' => get_post_status($id)];
 	}
 
@@ -235,6 +238,41 @@ final class Picklog_Lab_REST {
 	}
 
 	/** Pull the newest release from GitHub immediately instead of waiting for WP-cron auto-updates. */
+	/** 페이지 캐시 비우기: 워드프레스 안에서 비울 수 있는 흔한 캐시 플러그인·서버 캐시를 모두 시도한다(없는 것은 건너뜀). */
+	static function purge_caches($post_id = 0) {
+		$done = [];
+		if ($post_id) { clean_post_cache($post_id); }
+		if (function_exists('wp_cache_flush')) { wp_cache_flush(); $done[] = 'object'; }
+		if (has_action('litespeed_purge_all') || defined('LSCWP_V')) { do_action('litespeed_purge_all'); $done[] = 'litespeed'; }
+		if (function_exists('rocket_clean_domain')) { rocket_clean_domain(); $done[] = 'wp-rocket'; }
+		if (function_exists('w3tc_flush_all')) { w3tc_flush_all(); $done[] = 'w3tc'; }
+		if (function_exists('wp_cache_clear_cache')) { wp_cache_clear_cache(); $done[] = 'wp-super-cache'; }
+		if (function_exists('sg_cachepress_purge_cache')) { sg_cachepress_purge_cache(); $done[] = 'sg'; }
+		if (has_action('breeze_clear_all_cache')) { do_action('breeze_clear_all_cache'); $done[] = 'breeze'; }
+		if (has_action('rt_nginx_helper_purge_all')) { do_action('rt_nginx_helper_purge_all'); $done[] = 'nginx-helper'; }
+		if (class_exists('autoptimizeCache') && method_exists('autoptimizeCache', 'clearall')) { autoptimizeCache::clearall(); $done[] = 'autoptimize'; }
+		if (has_action('cloudflare_purge_everything')) { do_action('cloudflare_purge_everything'); $done[] = 'cloudflare'; }
+		do_action('picklog_purge_caches');
+		return $done;
+	}
+	static function purge() { return ['purged' => self::purge_caches()]; }
+
+	/** 실제 사이트 화면이 새 버전인지 서버 쪽에서 확인: 캐시 관련 응답 헤더와 히어로 유무(일반 주소 / 캐시를 건너뛰는 주소). */
+	static function cache_probe() {
+		$out = [];
+		foreach (['plain' => home_url('/saju/'), 'bust' => add_query_arg('pkprobe', time(), home_url('/saju/'))] as $k => $url) {
+			$r = wp_remote_get($url, ['timeout' => 12, 'sslverify' => false, 'redirection' => 3, 'headers' => ['User-Agent' => 'Mozilla/5.0 (picklog-probe)']]);
+			if (is_wp_error($r)) { $out[$k] = ['error' => $r->get_error_message()]; continue; }
+			$h = wp_remote_retrieve_headers($r); $body = wp_remote_retrieve_body($r); $hd = [];
+			foreach (['server', 'x-cache', 'x-cache-status', 'cf-cache-status', 'x-litespeed-cache', 'x-proxy-cache', 'x-nginx-cache', 'age', 'cache-control', 'x-powered-by', 'x-cache-enabled', 'x-srcache-fetch-status', 'x-hcdn-cache-status'] as $n) {
+				if (isset($h[$n])) $hd[$n] = is_array($h[$n]) ? implode(',', $h[$n]) : (string) $h[$n];
+			}
+			preg_match('/<!--[^>]{0,160}(cache|Cache|rocket|LiteSpeed|Performance)[^>]{0,160}-->/', $body, $m);
+			$out[$k] = ['code' => wp_remote_retrieve_response_code($r), 'hero' => strpos($body, 'pk-hero-saju') !== false, 'plugin_ver' => preg_match('/app\.css\?ver=([0-9.]+)/', $body, $v) ? $v[1] : '', 'headers' => $hd, 'comment' => $m[0] ?? ''];
+		}
+		return $out;
+	}
+
 	static function self_update() {
 		require_once ABSPATH . 'wp-admin/includes/file.php';
 		require_once ABSPATH . 'wp-admin/includes/plugin.php';

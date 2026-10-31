@@ -178,6 +178,11 @@ def run(state):
     if vt(manifest["version"]) > vt(state["plugin"]) and not DRY:
         u = api("POST", "self-update")
         log("self-update:", u.status_code, u.text[:400])
+        try:
+            pr = api("POST", "purge")
+            log("purge:", pr.status_code, pr.text[:200])
+        except Exception as e:
+            log("purge failed:", e)
         state = api("GET", "state").json()
 
     by_key = {i["key"]: i for i in state["items"] if i["key"]}
@@ -244,6 +249,8 @@ def run(state):
             "managed": [[i["id"], i["status"], i["key"], i["chars"]] for i in state["items"] if i["key"]],
             "unmanaged_public": [[i["id"], i["type"], i["title"][:24]] for i in state["items"] if not i["key"] and i["status"] == "publish"],
             "options": state["options"], "categories": [[c["slug"], c["count"]] for c in state["categories"]]}
+    if state.get("cache_probe"):
+        log("CACHE_PROBE " + json.dumps({"probe": state["cache_probe"], "plugins": state.get("active_plugins")}, ensure_ascii=False))
     log("PICKLOG_STATE " + json.dumps(snap, ensure_ascii=False))
     now = dt.datetime.now(KST)
     if now.hour == REPORT_HOUR:
