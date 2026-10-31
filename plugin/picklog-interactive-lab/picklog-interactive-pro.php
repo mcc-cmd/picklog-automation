@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PICKLOG Interactive Lab
  * Description: IPIP 기반 심리테스트, 정밀 만세력 사주·운세, 사주 궁합. 숏코드: [picklog_interactive], [picklog_interactive test="love"], [picklog_fortune], [picklog_compatibility], [picklog_ipip50]
- * Version: 2.1.2
+ * Version: 2.2.0
  * Requires PHP: 7.4
  * Text Domain: picklog-interactive
  */
@@ -13,8 +13,8 @@ require_once __DIR__ . '/includes/rest.php';
 require_once __DIR__ . '/includes/updater.php';
 
 final class Picklog_Interactive_Lab {
-	const VERSION = '2.1.2';
-	const SHORTCODES = ['picklog_interactive', 'picklog_personality', 'picklog_ipip50', 'picklog_fortune', 'picklog_saju', 'picklog_compatibility'];
+	const VERSION = '2.2.0';
+	const SHORTCODES = ['picklog_interactive', 'picklog_personality', 'picklog_ipip50', 'picklog_fortune', 'picklog_saju', 'picklog_compatibility', 'picklog_ttibti'];
 	const TESTS = ['saju', 'compat', 'type', 'bigfive', 'love', 'relation', 'work', 'money', 'stress', 'career', 'animal'];
 
 	static function init() {
@@ -25,6 +25,7 @@ final class Picklog_Interactive_Lab {
 		add_shortcode('picklog_saju', [__CLASS__, 'fortune']);
 		add_shortcode('picklog_compatibility', [__CLASS__, 'compatibility']);
 		add_shortcode('picklog_latest', [__CLASS__, 'latest']);
+		add_shortcode('picklog_ttibti', [__CLASS__, 'ttibti']);
 		add_action('wp_enqueue_scripts', [__CLASS__, 'register']);
 		add_filter('body_class', [__CLASS__, 'body_class']);
 		add_filter('comments_open', [__CLASS__, 'disable_comments'], 20, 2);
@@ -51,6 +52,7 @@ final class Picklog_Interactive_Lab {
 		wp_register_script('picklog-fortune', $u . 'fortune.js', ['picklog-saju-core'], self::VERSION, true);
 		wp_register_script('picklog-ipip', $u . 'ipip.js', [], self::VERSION, true);
 		wp_register_script('picklog-il', $u . 'app.js', ['picklog-ipip', 'picklog-fortune'], self::VERSION, true);
+		wp_register_script('picklog-ttibti', $u . 'ttibti.js', [], self::VERSION, true);
 	}
 
 	static function mount($mode, $test = '') {
@@ -84,5 +86,12 @@ final class Picklog_Interactive_Lab {
 	}
 	static function fortune() { return self::mount('fortune'); }
 	static function compatibility() { return self::mount('compatibility'); }
+	/** 띠비티아이: 태어난 해(+달·일) × MBTI 재미 풀이. [picklog_ttibti] — 계산은 브라우저에서만, 저장하지 않음 */
+	static function ttibti() {
+		if (!wp_script_is('picklog-ttibti', 'registered')) self::register();
+		wp_enqueue_style('picklog-il');
+		wp_enqueue_script('picklog-ttibti');
+		return '<div class="pil-app"><div class="pil-ttibti" data-base="' . esc_attr(plugins_url('assets/', __FILE__)) . '"><p class="pil-loading">콘텐츠를 불러오는 중입니다…</p></div></div>';
+	}
 }
 Picklog_Interactive_Lab::init();

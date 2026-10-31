@@ -309,3 +309,26 @@ body.picklog-test-page .wp-block-post-navigation-link{display:none!important}
 .pk-article .pk-cta{display:block;margin:26px 0;padding:18px 20px;border-radius:16px;background:linear-gradient(120deg,#2a2370,#4a3bc7);color:#fff;text-decoration:none;font-weight:800}
 .pk-article .pk-cta span{display:block;font-size:13px;font-weight:600;color:#d5cffd;margin-top:4px}
 .pk-article .pk-src{font-size:13px;color:#6b7590}
+
+/* 띠비티아이 (2.2.0) */
+.pil-tt-form{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:10px;align-items:end;background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.pil-tt-form label{display:flex;flex-direction:column;gap:4px;font-weight:700;font-size:14px;color:var(--ink-2)}
+.pil-tt-form select,.pil-tt-form input{height:44px;border:1px solid var(--line);border-radius:12px;padding:0 10px;font-size:15px;background:#fff;width:100%}
+.pil-tt-form button,.pil-tt-share{height:44px;border:0;border-radius:12px;padding:0 18px;background:var(--accent);color:#fff;font-weight:800;cursor:pointer}
+.pil-tt-hint{color:var(--muted);font-size:13px;margin:8px 2px 0}
+.pil-tt-card{margin-top:18px;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);background:#fffdf8}
+.pil-tt-head{display:flex;gap:14px;align-items:center;margin-bottom:10px}
+.pil-tt-face{width:96px;height:96px;flex:none}
+.pil-tt-kicker{margin:0;color:var(--muted);font-size:14px}
+.pil-tt-title{margin:2px 0 0;font-size:24px;line-height:1.3}
+.pil-tt-mix{background:var(--accent-2);border-radius:14px;padding:12px 14px}
+.pil-tt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.pil-tt-label{margin:0 0 6px;font-weight:800;font-size:14px}
+.pil-tt-row{display:flex;flex-wrap:wrap;gap:8px}
+.pil-tt-row span{display:flex;align-items:center;gap:6px;font-weight:700;font-size:14px}
+.pil-tt-mini{width:40px;height:40px}
+.pil-tt-type{background:var(--bg-soft);border:1px solid var(--line);border-radius:99px;padding:6px 12px}
+.pil-tt-note{color:var(--muted);font-size:13px;margin-top:14px}
+.pil-tt-btns{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pil-tt-link{font-weight:700}
+@container (max-width:640px){.pil-tt-form{grid-template-columns:1fr 1fr}.pil-tt-form button{grid-column:1/-1}.pil-tt-grid{grid-template-columns:1fr}}

@@ -81,6 +81,11 @@
        "title": "사주 궁합",
        "type": "key",
        "value": "page-gunghap"
+      },
+      {
+       "title": "띠비티아이 (띠 × MBTI)",
+       "type": "key",
+       "value": "page-ttibti"
       }
      ]
     },
