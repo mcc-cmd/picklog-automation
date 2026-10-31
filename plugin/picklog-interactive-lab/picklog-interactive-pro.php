@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PICKLOG Interactive Lab
  * Description: IPIP 기반 심리테스트, 정밀 만세력 사주·운세, 사주 궁합. 숏코드: [picklog_interactive], [picklog_interactive test="love"], [picklog_fortune], [picklog_compatibility], [picklog_ipip50]
- * Version: 2.3.0
+ * Version: 2.4.0
  * Requires PHP: 7.4
  * Text Domain: picklog-interactive
  */
@@ -13,7 +13,7 @@ require_once __DIR__ . '/includes/rest.php';
 require_once __DIR__ . '/includes/updater.php';
 
 final class Picklog_Interactive_Lab {
-	const VERSION = '2.3.0';
+	const VERSION = '2.4.0';
 	const SHORTCODES = ['picklog_interactive', 'picklog_personality', 'picklog_ipip50', 'picklog_fortune', 'picklog_saju', 'picklog_compatibility', 'picklog_ttibti'];
 	const TESTS = ['saju', 'compat', 'type', 'bigfive', 'love', 'relation', 'work', 'money', 'stress', 'career', 'animal'];
 
@@ -26,6 +26,7 @@ final class Picklog_Interactive_Lab {
 		add_shortcode('picklog_compatibility', [__CLASS__, 'compatibility']);
 		add_shortcode('picklog_latest', [__CLASS__, 'latest']);
 		add_shortcode('picklog_ttibti', [__CLASS__, 'ttibti']);
+		add_shortcode('picklog_hero', [__CLASS__, 'hero']);
 		add_action('wp_enqueue_scripts', [__CLASS__, 'register']);
 		add_filter('body_class', [__CLASS__, 'body_class']);
 		add_filter('comments_open', [__CLASS__, 'disable_comments'], 20, 2);
@@ -86,6 +87,40 @@ final class Picklog_Interactive_Lab {
 	}
 	static function fortune() { return self::mount('fortune'); }
 	static function compatibility() { return self::mount('compatibility'); }
+	/** 페이지 맨 위 그림 히어로. [picklog_hero key="home|saju|gunghap|bigfive"] — 테마 제목·앱 머리글은 CSS로 숨기고 이 h1이 대신한다 */
+	static function hero($atts) {
+		$a = shortcode_atts(['key' => 'home'], $atts);
+		if (!wp_style_is('picklog-il', 'registered')) self::register();
+		wp_enqueue_style('picklog-il');
+		$u = plugins_url('assets/', __FILE__);
+		$m = (int) wp_date('n');
+		$season = $m >= 3 && $m <= 5 ? 'spring' : ($m >= 6 && $m <= 8 ? 'summer' : ($m >= 9 && $m <= 11 ? 'autumn' : 'winter'));
+		$H = [
+			'home' => ['tone' => 'home', 'pill' => '사주 · 운세 · 성격검사 · 띠비티아이', 'title' => '나를 알아가는<br><mark>가장 재밌는</mark> 방법',
+				'sub' => '정밀 만세력 사주부터 국제 공개 문항(IPIP) 성격검사까지. 회원가입 없이 무료로, 3분이면 결과가 나와요.',
+				'chips' => ['무료 사주', '사주 궁합', 'Big Five', '연애·관계 테스트'], 'imgs' => ['card-saju.webp', 'card-type.webp', 'card-compat.webp']],
+			'saju' => ['tone' => 'saju', 'pill' => '정밀 만세력 · 절입 시각 분 단위 반영', 'title' => '<mark>무료</mark> 사주 풀이<br>& 오늘의 운세',
+				'sub' => '생년월일시로 사주 원국을 세우고 오늘·이번 달·올해 운세와 10년 대운까지 풀어 드려요. 음력·윤달도 그대로 입력하세요.',
+				'chips' => ['오늘의 운세', '올해 운세', '10년 대운', '음력·윤달'], 'imgs' => ['saju-hero-' . $season . '.webp']],
+			'gunghap' => ['tone' => 'gunghap', 'pill' => '일간 · 일지 · 띠 · 오행 비교', 'title' => '우리 둘<br><mark>사주 궁합</mark>',
+				'sub' => '두 사람의 생년월일만 넣으면 전통 명리학의 다섯 가지 관계를 한 번에 비교해요. 상대 정보는 저장하지 않아요.',
+				'chips' => ['천간합', '육합·삼합', '충·원진', '오행 보완'], 'imgs' => ['card-compat.webp', 'card-love.webp']],
+			'bigfive' => ['tone' => 'bigfive', 'pill' => 'IPIP 50문항 · 약 7~10분', 'title' => '<mark>Big Five</mark><br>성격검사',
+				'sub' => '심리학에서 가장 널리 쓰는 성격 5요인을 0~100점으로 보여 줘요. 연구용 공개 문항(Goldberg, 1992)을 한국어로 옮겼어요.',
+				'chips' => ['외향성', '친화성', '성실성', '정서 안정성', '개방성'], 'imgs' => ['card-bigfive.webp', 'card-work.webp']],
+		];
+		$h = $H[$a['key']] ?? $H['home'];
+		$imgs = '';
+		foreach ($h['imgs'] as $i => $f) {
+			$imgs .= '<img class="pk-hero-img pk-hero-img' . ($i + 1) . '" src="' . esc_url($u . $f) . '" alt="" width="800" height="400"' . ($i ? ' loading="lazy"' : ' fetchpriority="high"') . ' decoding="async">';
+		}
+		$chips = '';
+		foreach ($h['chips'] as $c) $chips .= '<span>' . esc_html($c) . '</span>';
+		return '<div class="pil-app pk-hero-wrap"><section class="pk-hero pk-hero-' . esc_attr($h['tone']) . ' pk-hero-n' . count($h['imgs']) . '"><div class="pk-hero-text">'
+			. '<p class="pk-hero-pill">' . esc_html($h['pill']) . '</p><h1 class="pk-hero-title">' . wp_kses($h['title'], ['br' => [], 'mark' => []]) . '</h1>'
+			. '<p class="pk-hero-sub">' . esc_html($h['sub']) . '</p><p class="pk-hero-chips">' . $chips . '</p></div>'
+			. '<div class="pk-hero-art">' . $imgs . '</div></section></div>';
+	}
 	/** 띠비티아이: 태어난 해(+달·일) × MBTI 재미 풀이. [picklog_ttibti] — 계산은 브라우저에서만, 저장하지 않음 */
 	static function ttibti() {
 		if (!wp_script_is('picklog-ttibti', 'registered')) self::register();

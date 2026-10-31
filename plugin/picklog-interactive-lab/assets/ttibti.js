@@ -120,7 +120,7 @@
     });
     root.innerHTML =
       '<section class="tt-hero"><p class="tt-pill">12띠 × MBTI 16유형 = 192가지</p>' +
-      '<h2 class="tt-logo"><span>띠</span>비티아이</h2>' +
+      '<h1 class="tt-logo"><span>띠</span>비티아이</h1>' +
       '<p class="tt-sub">태어난 해와 MBTI만 고르면 3초 만에 나만의 결과 카드가 나와요.</p>' +
       '<div class="tt-parade">' + parade + '</div></section>' +
       '<form class="tt-form">' +
