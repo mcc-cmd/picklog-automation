@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PICKLOG Interactive Lab
  * Description: IPIP 기반 심리테스트, 정밀 만세력 사주·운세, 사주 궁합. 숏코드: [picklog_interactive], [picklog_interactive test="love"], [picklog_fortune], [picklog_compatibility], [picklog_ipip50]
- * Version: 2.6.2
+ * Version: 2.7.0
  * Requires PHP: 7.4
  * Text Domain: picklog-interactive
  */
@@ -13,8 +13,8 @@ require_once __DIR__ . '/includes/rest.php';
 require_once __DIR__ . '/includes/updater.php';
 
 final class Picklog_Interactive_Lab {
-	const VERSION = '2.6.2';
-	const SHORTCODES = ['picklog_interactive', 'picklog_personality', 'picklog_ipip50', 'picklog_fortune', 'picklog_saju', 'picklog_compatibility', 'picklog_ttibti'];
+	const VERSION = '2.7.0';
+	const SHORTCODES = ['picklog_interactive', 'picklog_personality', 'picklog_ipip50', 'picklog_fortune', 'picklog_saju', 'picklog_compatibility', 'picklog_ttibti', 'picklog_today_tti', 'picklog_game'];
 	const TESTS = ['saju', 'compat', 'type', 'bigfive', 'love', 'relation', 'work', 'money', 'stress', 'career', 'animal'];
 
 	static function init() {
@@ -27,6 +27,8 @@ final class Picklog_Interactive_Lab {
 		add_shortcode('picklog_latest', [__CLASS__, 'latest']);
 		add_shortcode('picklog_ttibti', [__CLASS__, 'ttibti']);
 		add_shortcode('picklog_hero', [__CLASS__, 'hero']);
+		add_shortcode('picklog_today_tti', [__CLASS__, 'today_tti']);
+		add_shortcode('picklog_game', [__CLASS__, 'game']);
 		add_action('wp_enqueue_scripts', [__CLASS__, 'register']);
 		add_filter('body_class', [__CLASS__, 'body_class']);
 		add_action('astra_primary_content_top', [__CLASS__, 'category_hero'], 1);
@@ -71,6 +73,8 @@ final class Picklog_Interactive_Lab {
 		wp_register_script('picklog-ipip', $u . 'ipip.js', [], self::VERSION, true);
 		wp_register_script('picklog-il', $u . 'app.js', ['picklog-ipip', 'picklog-fortune'], self::VERSION, true);
 		wp_register_script('picklog-ttibti', $u . 'ttibti.js', [], self::VERSION, true);
+		wp_register_script('picklog-tti-core', $u . 'tti-core.js', [], self::VERSION, true);
+		wp_register_script('picklog-tti-today', $u . 'tti-today.js', ['picklog-tti-core'], self::VERSION, true);
 		if (self::category_key()) wp_enqueue_style('picklog-il');   // 카테고리 히어로: 머리에서 불러 깜빡임 없이
 	}
 
@@ -179,6 +183,21 @@ final class Picklog_Interactive_Lab {
 		wp_enqueue_style('picklog-il');
 		wp_enqueue_script('picklog-ttibti');
 		return '<div class="pil-app"><div class="pil-ttibti" data-base="' . esc_attr(plugins_url('assets/', __FILE__)) . '"><p class="pil-loading">콘텐츠를 불러오는 중입니다…</p></div></div>';
+	}
+	/** 오늘의 띠 운세: 12띠 등급·4가지 운·행운 항목·게임 보상 코드. [picklog_today_tti] — 띠블러쉬와 같은 계산 */
+	static function today_tti() {
+		if (!wp_script_is('picklog-tti-today', 'registered')) self::register();
+		wp_enqueue_style('picklog-il');
+		wp_enqueue_script('picklog-tti-today');
+		return '<div class="pil-app"><div class="pil-today"><p class="pil-loading">오늘의 띠 운세를 불러오는 중입니다…</p></div></div>';
+	}
+	/** 띠블러쉬 게임: 화면 안에 넣고, 전체 화면으로 하기 버튼. [picklog_game] */
+	static function game() {
+		wp_enqueue_style('picklog-il');
+		$src = plugins_url('assets/game/index.html', __FILE__) . '?v=' . self::VERSION;
+		return '<div class="pil-app pil-game"><p class="pil-game-top"><a class="pil-game-full" href="' . esc_url($src) . '">⛶ 전체 화면</a>'
+			. '<a class="pil-game-fortune" href="' . esc_url(home_url('/today-tti/')) . '">🎁 띠 운세 · 보상 코드</a></p>'
+			. '<iframe class="pil-game-frame" src="' . esc_url($src) . '" title="띠블러쉬 게임" loading="lazy" allow="fullscreen; autoplay"></iframe></div>';
 	}
 }
 Picklog_Interactive_Lab::init();

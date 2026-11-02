@@ -78,6 +78,11 @@
        "value": "page-saju"
       },
       {
+       "title": "오늘의 띠 운세",
+       "type": "key",
+       "value": "page-today-tti"
+      },
+      {
        "title": "사주 궁합",
        "type": "key",
        "value": "page-gunghap"
@@ -86,6 +91,11 @@
        "title": "띠비티아이 (띠 × MBTI)",
        "type": "key",
        "value": "page-ttibti"
+      },
+      {
+       "title": "띠블러쉬 (12띠 게임)",
+       "type": "key",
+       "value": "page-game"
       }
      ]
     },
