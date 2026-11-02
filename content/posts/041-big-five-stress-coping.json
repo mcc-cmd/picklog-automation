@@ -1,0 +1,24 @@
+{
+ "key": "post-big-five-stress-coping",
+ "type": "post",
+ "order": 41,
+ "title": "성격과 스트레스 — Big Five는 스트레스를 겪는 방식과 대처를 어떻게 바꿀까",
+ "slug": "big-five-stress-coping",
+ "status": "publish",
+ "excerpt": "같은 일을 겪어도 누군가는 오래 흔들리고 누군가는 금방 정리합니다. 성격이 스트레스에 노출되는 빈도, 반응의 크기, 대처 방식에 어떤 차이를 만드는지 메타분석과 예시로 정리합니다.",
+ "meta_description": "Big Five 성격 특성과 스트레스 대처의 관계를 정리했습니다. 노출·반응·대처 선택의 3단계, 신경성의 연쇄 반응, 성실성·외향성과 문제 중심 대처, 성격별 실천 팁을 연구와 함께 설명합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "Big Five",
+  "스트레스",
+  "대처 방식",
+  "신경성",
+  "성격 심리"
+ ],
+ "comment_status": "closed"
+}

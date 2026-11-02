@@ -1,0 +1,24 @@
+{
+ "key": "post-big-five-facets",
+ "type": "post",
+ "order": 44,
+ "title": "Big Five 30개 하위 측면 — NEO-PI-R과 IPIP-NEO의 facet, 10개 aspect까지 한눈에",
+ "slug": "big-five-facets",
+ "status": "publish",
+ "excerpt": "외향성 점수가 같아도 사람마다 모습은 다릅니다. Big Five 다섯 요인 아래의 10개 aspect와 30개 facet을 표로 정리하고, NEO-PI-R·IPIP-NEO·BFI-2 같은 검사의 차이를 비교합니다.",
+ "meta_description": "Big Five 성격 5요인의 하위 측면(facet) 30개와 중간 수준 aspect 10개를 한국어 설명과 함께 정리했습니다. NEO-PI-R, IPIP-NEO-120, BFI-2, IPIP-50의 문항 수와 측정 범위도 비교합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "Big Five",
+  "하위 측면",
+  "facet",
+  "NEO-PI-R",
+  "IPIP-NEO"
+ ],
+ "comment_status": "closed"
+}
