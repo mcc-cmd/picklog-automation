@@ -19,20 +19,78 @@
 </ul>
 <p>한 요인 안에 정방향과 역방향 문항을 섞는 이유는, 질문 내용과 상관없이 "그렇다"만 고르는 응답 습관이 점수를 부풀리지 못하게 하기 위해서입니다. PICKLOG 결과 화면의 "응답 품질 점검"은 이런 습관이 보이는지도 함께 확인합니다.</p>
 
+<h3>예시: 외향성 10문항을 직접 채점해 보기</h3>
+<p>실제 검사의 외향성 10문항에 한 사람이 아래처럼 답했다고 해 보겠습니다. 정방향 문항은 응답이 그대로 점수가 되고, 역방향 문항은 6에서 응답을 뺀 값이 점수가 됩니다.</p>
+<table>
+<thead><tr><th>문항</th><th>방향</th><th>응답</th><th>채점</th></tr></thead>
+<tbody>
+<tr><td>모임에서 분위기를 띄우는 편이다</td><td>정</td><td>3</td><td>3</td></tr>
+<tr><td>사람들과 함께 있으면 편안하다</td><td>정</td><td>4</td><td>4</td></tr>
+<tr><td>먼저 대화를 시작한다</td><td>정</td><td>4</td><td>4</td></tr>
+<tr><td>모임에서 여러 사람과 두루 이야기를 나눈다</td><td>정</td><td>3</td><td>3</td></tr>
+<tr><td>주목받는 것이 크게 불편하지 않다</td><td>정</td><td>2</td><td>2</td></tr>
+<tr><td>말을 많이 하지 않는 편이다</td><td>역</td><td>2</td><td>4</td></tr>
+<tr><td>사람들 사이에서 뒤로 물러나 있는 편이다</td><td>역</td><td>3</td><td>3</td></tr>
+<tr><td>할 말이 별로 없는 편이다</td><td>역</td><td>1</td><td>5</td></tr>
+<tr><td>남의 관심을 끄는 것을 좋아하지 않는다</td><td>역</td><td>4</td><td>2</td></tr>
+<tr><td>낯선 사람들 앞에서는 조용해진다</td><td>역</td><td>2</td><td>4</td></tr>
+</tbody>
+</table>
+<ol>
+<li><strong>원점수</strong>: 채점 열을 모두 더하면 34점입니다. 가능한 범위는 10점(모두 최저)부터 50점(모두 최고)까지입니다.</li>
+<li><strong>평균</strong>: 34 ÷ 10 = 3.40. 결과 화면 아래쪽에 "원점수 34 / 50 · 평균 3.40"으로 표시됩니다.</li>
+<li><strong>0~100점으로 바꾸기</strong>: (평균 − 1) ÷ 4 × 100 = (3.40 − 1) ÷ 4 × 100 = 60점. 평균이 1이면 0점, 3이면 50점, 5이면 100점이 되는 셈입니다.</li>
+<li><strong>구간 붙이기</strong>: 60점은 "다소 높음" 구간에 들어갑니다.</li>
+</ol>
+<table>
+<thead><tr><th>점수</th><th>결과 화면 구간</th></tr></thead>
+<tbody>
+<tr><td>75점 이상</td><td>높음</td></tr>
+<tr><td>60~74점</td><td>다소 높음</td></tr>
+<tr><td>41~59점</td><td>중간</td></tr>
+<tr><td>26~40점</td><td>다소 낮음</td></tr>
+<tr><td>25점 이하</td><td>낮음</td></tr>
+</tbody>
+</table>
+<p>이 예시에서 눈여겨볼 점이 두 가지 있습니다. 첫째, 경계 근처의 점수는 쉽게 흔들립니다. "남의 관심을 끄는 것을 좋아하지 않는다"에 4 대신 5를 골랐다면 원점수는 33점, 점수는 57점이 되어 구간이 "중간"으로 바뀝니다. 문항 하나, 한 칸 차이로 이름표가 달라지므로 구간 이름보다 숫자와 그 주변 범위를 함께 보는 것이 좋습니다. 둘째, 같은 사람이 20문항 단축형을 하면 점수가 조금 달라질 수 있습니다. Mini-IPIP의 외향성 4문항(분위기를 띄운다, 두루 이야기한다, 말을 많이 하지 않는다, 뒤로 물러나 있다)만 뽑으면 채점은 3+3+4+3=13, 평균 3.25로 56점("중간")입니다. 문항 수가 적을수록 문항 하나의 무게가 커져서 이런 차이가 생깁니다.</p>
+
+<h3>0~100점은 백분위가 아니다</h3>
+<p>평균을 0~100으로 옮긴 이 점수를 POMP(percent of maximum possible) 점수라고 합니다. 척도마다 1~5점, 1~7점처럼 단위가 달라 비교가 어려운 문제를 줄이려고 제안된 방식입니다(Cohen 외, 1999). "60점"은 가능한 범위의 60% 위치라는 뜻이지, 100명 중 60등이라는 뜻이 아닙니다.</p>
+
+<h3>응답 품질 점검은 무엇을 볼까?</h3>
+<p>PICKLOG 결과 화면은 다음 네 가지 중 하나라도 해당하면 "해석 주의"를 표시합니다.</p>
+<ul>
+<li>같은 응답 번호가 전체의 70% 이상 반복된 경우</li>
+<li>문항 방향을 무시하고 원래 응답의 평균이 4.3 이상이거나 1.7 이하로 한쪽에 몰린 경우</li>
+<li>뜻이 비슷한 문항 쌍(예: "기분이 자주 바뀐다"와 "감정 기복이 심한 편이다")의 채점 점수가 평균 1.75점 이상 차이 나는 경우</li>
+<li>문항당 평균 응답 시간이 1.6초보다 짧은 경우</li>
+</ul>
+<p>뜻이 비슷한 문항 쌍은 정서 안정성, 친화성, 외향성, 개방성, 성실성에 걸쳐 일곱 쌍이 있고, 20문항 테스트처럼 쌍이 네 개 미만으로만 남는 경우에는 일관성 점검을 건너뜁니다. 이 점검은 결과를 버리라는 뜻이 아니라, 문항을 충분히 읽지 않았을 가능성을 알려 주는 장치입니다. 주의 표시가 나왔다면 시간 여유가 있을 때 한 번 더 답해 보고 두 결과를 비교해 보세요.</p>
+
 <h2>솔직하게 말하는 한계</h2>
 <h3>1. 한국어 번역판은 표준화되지 않았다</h3>
 <p>PICKLOG의 문항은 영어 원문을 한국어로 옮긴 것입니다. 번역 과정에서 뉘앙스가 달라질 수 있고, 한국인 대규모 표본으로 신뢰도와 타당도를 다시 검증한 것은 아닙니다.</p>
 <h3>2. 백분위를 제공하지 않는다</h3>
 <p>"상위 몇 %"를 알려면 많은 한국인의 응답 분포(규준)가 필요합니다. 규준 없이 백분위를 만들면 숫자가 사실처럼 보이는 착시가 생기기 때문에, PICKLOG는 점수를 가능한 범위 안의 위치(0~100)로만 보여 줍니다.</p>
+<h3>짧은 검사일수록 오차가 커진다</h3>
+<p>요인당 문항이 한두 개뿐인 아주 짧은 척도는 신뢰도와 예측력이 눈에 띄게 떨어진다는 분석이 있습니다(Credé 외, 2012). 20문항 테마 테스트는 가볍게 경향을 보는 용도로, 자신에 대해 중요한 판단을 하고 싶다면 50문항 검사를 기준으로 삼는 것이 안전합니다.</p>
 <h3>3. 자기보고의 한계</h3>
-<p>모든 자기보고식 검사는 "내가 생각하는 나"를 측정합니다. 그날의 기분, 되고 싶은 모습, 질문을 해석하는 방식이 결과에 섞일 수 있습니다. 가까운 사람에게 같은 문항으로 나를 평가해 달라고 해 비교해 보는 것도 좋은 방법입니다.</p>
+<p>모든 자기보고식 검사는 "내가 생각하는 나"를 측정합니다. 그날의 기분, 되고 싶은 모습, 질문을 해석하는 방식이 결과에 섞일 수 있습니다. 가까운 사람에게 같은 문항으로 나를 평가해 달라고 해 비교해 보는 것도 좋은 방법입니다. 실제로 여러 연구를 종합한 메타분석에서는 나를 잘 아는 사람이 평가한 성격 점수가 자기보고 점수만큼, 직무 성과 같은 일부 결과에서는 그보다 더 잘 예측하는 것으로 나타났습니다(Connelly &amp; Ones, 2010).</p>
 <h3>4. 진단 도구가 아니다</h3>
 <p>Big Five는 일반적인 성격 특성을 재는 도구이지 우울증, 불안장애, ADHD 같은 상태를 진단하지 않습니다. 정서 안정성 점수가 낮게 나왔다고 해서 문제가 있다는 뜻이 아닙니다.</p>
 
 <h2>그래도 IPIP를 쓰는 이유</h2>
 <p>출처를 알 수 없는 "재미용" 문항과 비교하면, IPIP는 적어도 다음을 보장합니다. 문항과 채점 방식이 공개되어 누구나 검증할 수 있고, 원어 버전의 신뢰도와 타당도가 수많은 연구로 확인되었으며, 결과가 학술 연구에서 쓰는 Big Five와 같은 틀로 해석됩니다. PICKLOG는 이 장점을 살리면서, 한계는 결과 화면마다 숨기지 않고 표시합니다.</p>
 
+<h2>자주 묻는 질문</h2>
+<h3>며칠 뒤에 다시 하면 점수가 달라지나요?</h3>
+<p>조금씩 달라지는 것이 정상입니다. 위 예시처럼 응답 한 칸이 2~3점을 움직이기 때문에, 몇 점 정도의 차이는 성격이 변했다기보다 측정 오차로 보는 것이 맞습니다. 두세 번 해 본 결과가 같은 방향을 가리킨다면 그 경향을 믿을 만합니다.</p>
+<h3>번역된 문항인데 원래 신뢰도를 그대로 믿어도 되나요?</h3>
+<p>그대로 믿기는 어렵습니다. 앞에서 소개한 신뢰도 수치는 영어 원척도를 미국 표본에 실시한 결과입니다. 한국어 문항이 같은 수준의 신뢰도를 보이는지는 별도의 검증이 필요하며, PICKLOG 결과 화면에도 이 점을 함께 적어 두었습니다.</p>
+
+<div class="pk-box"><strong>함께 읽으면 좋은 글</strong><ul><li><a href="/big-five-personality/">Big Five 성격 5요인</a> — IPIP가 측정하는 다섯 요인</li><li><a href="/big-five-facets/">Big Five 30개 하위 측면</a> — 50문항보다 더 세밀한 IPIP-NEO</li><li><a href="/mbti-vs-big-five/">MBTI와 Big Five의 차이</a> — 유형 검사와 점수 검사</li><li><a href="/hexaco-honesty-humility/">HEXACO와 정직-겸손성</a> — IPIP로도 측정하는 여섯 번째 요인</li><li><a href="/personality-change-across-lifespan/">성격은 변할까?</a> — 점수가 바뀌는 이유</li></ul></div>
+
 <a class="pk-cta" href="/big-five-test/">IPIP 50문항 정밀 검사 시작하기 →<span>응답 품질 점검과 요인별 해석이 포함된 무료 검사</span></a>
 
-<p class="pk-src">참고: International Personality Item Pool, ipip.ori.org / Goldberg, L. R. et al. (2006). The International Personality Item Pool and the future of public-domain personality measures. <em>Journal of Research in Personality</em>, 40, 84–96. / Donnellan, M. B., Oswald, F. L., Baird, B. M., &amp; Lucas, R. E. (2006). The Mini-IPIP scales. <em>Psychological Assessment</em>, 18, 192–203.</p>
+<p class="pk-src">참고: International Personality Item Pool, ipip.ori.org / Goldberg, L. R. et al. (2006). The International Personality Item Pool and the future of public-domain personality measures. <em>Journal of Research in Personality</em>, 40, 84–96. / Donnellan, M. B., Oswald, F. L., Baird, B. M., &amp; Lucas, R. E. (2006). The Mini-IPIP scales. <em>Psychological Assessment</em>, 18, 192–203. / Goldberg, L. R. (1992). The development of markers for the Big-Five factor structure. <em>Psychological Assessment</em>, 4, 26–42. / Cohen, P., Cohen, J., Aiken, L. S., &amp; West, S. G. (1999). The problem of units and the circumstance for POMP. <em>Multivariate Behavioral Research</em>, 34, 315–346. / Credé, M., Harms, P., Niehorster, S., &amp; Gaye-Valentine, A. (2012). An evaluation of the consequences of using short measures of the Big Five personality traits. <em>Journal of Personality and Social Psychology</em>, 102, 874–888. / Connelly, B. S., &amp; Ones, D. S. (2010). An other perspective on personality: Meta-analytic integration of observers' accuracy and predictive validity. <em>Psychological Bulletin</em>, 136, 1092–1122.</p>
 </div>
