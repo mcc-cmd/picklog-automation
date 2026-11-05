@@ -29,18 +29,25 @@ Status: `live` = published on the site, `queued` = in content/posts waiting for 
 | 34 | sinsal-dohwa-yeokma-hwagae (도화·역마·화개) | saju-guide | live |
 | 35 | personality-change-across-lifespan (성격은 변할까) | psychology | live |
 | 36 | hexaco-honesty-humility (HEXACO·정직-겸손성) | psychology | live |
-| 37 | cheongan-10 (천간 10글자 성향, 갑목~계수) | saju-guide | queued |
-| 38 | big-five-and-work (성격과 직무 성과·직업 선택 연구) | psychology | queued |
-| 39 | yongsin-basics (용신·희신 개념과 억부·조후) | saju-guide | queued |
-| 40 | seun-wolun (세운·월운 읽는 법, 2027 예시) | fortune | queued |
-| 41 | big-five-stress-coping (성격과 스트레스 대처 연구) | psychology | queued |
-| 42 | ohaeng-lacking (오행이 없을 때: 무관·무재 사주 오해) | saju-guide | queued |
+| 37 | cheongan-10 (천간 10글자 성향, 갑목~계수) | saju-guide | live |
+| 38 | big-five-and-work (성격과 직무 성과·직업 선택 연구) | psychology | live |
+| 39 | yongsin-basics (용신·희신 개념과 억부·조후) | saju-guide | live |
+| 40 | seun-wolun (세운·월운 읽는 법, 2027 예시) | fortune | live |
+| 41 | big-five-stress-coping (성격과 스트레스 대처 연구) | psychology | live |
+| 42 | ohaeng-lacking (오행이 없을 때: 무관·무재 사주 오해) | saju-guide | live |
 | 43 | gunghap-basics (궁합 보는 법: 일간·일지·띠 궁합의 차이와 예시) | saju-guide | queued |
 | 44 | big-five-facets (Big Five 30개 하위 측면, NEO·IPIP 비교) | psychology | queued |
-| 45 | gwanseong-meaning (정관·편관 심화: 관성이 많거나 없을 때) | saju-guide | todo |
-| 46 | self-report-bias (자기 보고식 검사의 한계: 사회적 바람직성·응답 양식) | psychology | todo |
-| 47 | jaeseong-meaning (정재·편재 심화: 재성 읽는 법) | saju-guide | todo |
-| 48 | grit-vs-conscientiousness (그릿은 성실성과 다를까? 연구 정리) | psychology | todo |
+| 45 | gwanseong-meaning (정관·편관 심화: 관성이 많거나 없을 때) | saju-guide | queued |
+| 46 | self-report-bias (자기 보고식 검사의 한계: 사회적 바람직성·응답 양식) | psychology | queued |
+| 47 | jaeseong-meaning (정재·편재 심화: 재성 읽는 법) | saju-guide | queued |
+| 48 | grit-vs-conscientiousness (그릿은 성실성과 다를까? 연구 정리) | psychology | queued |
+| 49 | siksang-meaning (식신·상관 심화: 식신제살·상관견관, 실제 명식) | saju-guide | todo |
+| 50 | inseong-bigeop (인성·비겁 심화: 인성 과다, 비겁 과다 읽는 법) | saju-guide | todo |
+| 51 | personality-heritability (성격의 유전과 환경: 쌍둥이·입양 연구) | psychology | todo |
+| 52 | big-five-wellbeing (성격과 행복·주관적 안녕감 연구) | psychology | todo |
+| 53 | cheongan-hap-chung (천간합·천간충: 갑기합~무계합, 실제 명식) | saju-guide | todo |
+| 54 | gongmang (공망: 계산법과 해석, 순중공망 표) | saju-guide | todo |
+| 55 | dark-triad-and-big-five (어두운 3요인과 Big Five·HEXACO 관계) | psychology | todo |
 
 After approval: 60 ilju pages (2–3 per day), per-test landing pages, Coupang links (settings only).
 
@@ -54,3 +61,5 @@ Next: 17–28 are written (2027 띠별, gate opens 2026-11-15); keep 29–33 dri
 2026-11-02: 1–16 and 29–36 live (24 posts, plugin 2.6.2, no errors). Wrote 41–44. Ungated queue now 37–44 (8 posts, lasts until ~2026-11-05); 17–28 open 2026-11-15. Next run: write 45+ (45–48 remain todo; add new backlog items) to keep the ungated queue from running dry before 11-15.
 
 2026-11-03 (AdSense mid-audit): extended 1–7 and 9–15 to 2,700+ Hangul each (worked examples computed with saju-core.js, IPIP scoring examples match the code, real citations, FAQ, related links). Rewrote 2027 띠별 17–28: 2,800+ Hangul each, distinct structure and one animal-specific section each (max pairwise similarity 0.33, was ~0.62), distinct titles. All 44 posts now 2,500+ Hangul. Still blocked: adsense_client in plugin options is empty (no AdSense loader/ads.txt from the plugin) — needs the ca-pub ID from the owner. Re-apply after 17–28 finish publishing (~11/20) and Search Console shows them indexed.
+
+2026-11-05: 1–16 and 29–42 live (30 posts, plugin 2.7.0, no ERROR/WAITING in logs since 11-01). Wrote 45–48 (2,650–2,830 Hangul each; saju examples and 관성/재성 frequency stats computed with saju-core.js over 109,578 charts). Ungated queue 43–48 publishes 11-06 to 11-08; 17–28 open 2026-11-15, so 11-09 to 11-14 is empty unless 49+ are written. Next run: write 49+ in order. adsense_client still empty (owner must supply ca-pub ID).

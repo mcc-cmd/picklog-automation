@@ -1,0 +1,24 @@
+{
+ "key": "post-grit-vs-conscientiousness",
+ "type": "post",
+ "order": 48,
+ "title": "그릿(Grit)은 성실성과 다를까? 메타분석으로 본 끈기와 Big Five",
+ "slug": "grit-vs-conscientiousness",
+ "status": "publish",
+ "excerpt": "그릿은 재능보다 중요하다는 끈기 개념입니다. 그런데 메타분석에서는 Big Five 성실성과의 상관이 .84에 이릅니다. 그릿의 두 요소와 성실성의 관계를 연구로 정리했습니다.",
+ "meta_description": "그릿(Grit)과 Big Five 성실성의 관계를 Duckworth(2007), Credé(2017) 메타분석, 쌍둥이 연구 등으로 정리했습니다. 노력의 지속과 관심의 일관성을 나눠 읽는 예시도 소개합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "그릿",
+  "성실성",
+  "Big Five",
+  "끈기",
+  "Duckworth"
+ ],
+ "comment_status": "closed"
+}
