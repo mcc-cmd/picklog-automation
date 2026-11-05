@@ -1,0 +1,25 @@
+{
+ "key": "post-personality-heritability",
+ "type": "post",
+ "order": 51,
+ "title": "성격의 유전과 환경 — 쌍둥이·입양 연구로 본 Big Five 유전율",
+ "slug": "personality-heritability",
+ "status": "publish",
+ "excerpt": "성격은 타고나는 걸까? 쌍둥이·입양 연구를 종합한 메타분석에서 Big Five 개인차의 약 40%가 유전과 관련되었습니다. 유전율의 뜻, 공유·비공유 환경, 흔한 오해를 예시로 정리했습니다.",
+ "meta_description": "성격의 유전과 환경을 쌍둥이·입양 연구로 정리했습니다. Vukasović & Bratko(2015) 메타분석의 유전율 40%, 따로 자란 쌍둥이 연구, 비공유 환경의 의미와 유전율에 대한 오해 다섯 가지를 설명합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "성격 유전",
+  "유전율",
+  "쌍둥이 연구",
+  "Big Five",
+  "행동유전학"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-13"
+}

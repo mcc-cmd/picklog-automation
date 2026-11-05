@@ -41,13 +41,13 @@ Status: `live` = published on the site, `queued` = in content/posts waiting for 
 | 46 | self-report-bias (자기 보고식 검사의 한계: 사회적 바람직성·응답 양식) | psychology | queued |
 | 47 | jaeseong-meaning (정재·편재 심화: 재성 읽는 법) | saju-guide | queued |
 | 48 | grit-vs-conscientiousness (그릿은 성실성과 다를까? 연구 정리) | psychology | queued |
-| 49 | siksang-meaning (식신·상관 심화: 식신제살·상관견관, 실제 명식) | saju-guide | todo |
-| 50 | inseong-bigeop (인성·비겁 심화: 인성 과다, 비겁 과다 읽는 법) | saju-guide | todo |
-| 51 | personality-heritability (성격의 유전과 환경: 쌍둥이·입양 연구) | psychology | todo |
-| 52 | big-five-wellbeing (성격과 행복·주관적 안녕감 연구) | psychology | todo |
-| 53 | cheongan-hap-chung (천간합·천간충: 갑기합~무계합, 실제 명식) | saju-guide | todo |
-| 54 | gongmang (공망: 계산법과 해석, 순중공망 표) | saju-guide | todo |
-| 55 | dark-triad-and-big-five (어두운 3요인과 Big Five·HEXACO 관계) | psychology | todo |
+| 49 | siksang-meaning (식신·상관 심화: 식신제살·상관견관, 실제 명식) | saju-guide | done |
+| 50 | inseong-bigeop (인성·비겁 심화: 인성 과다, 비겁 과다 읽는 법) | saju-guide | done |
+| 51 | personality-heritability (성격의 유전과 환경: 쌍둥이·입양 연구) | psychology | done |
+| 52 | big-five-wellbeing (성격과 행복·주관적 안녕감 연구) | psychology | done |
+| 53 | cheongan-hap-chung (천간합·천간충: 갑기합~무계합, 실제 명식) | saju-guide | done |
+| 54 | gongmang (공망: 계산법과 해석, 순중공망 표) | saju-guide | done |
+| 55 | dark-triad-and-big-five (어두운 3요인과 Big Five·HEXACO 관계) | psychology | done |
 
 After approval: 60 ilju pages (2–3 per day), per-test landing pages, Coupang links (settings only).
 

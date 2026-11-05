@@ -1,0 +1,25 @@
+{
+ "key": "post-dark-triad-and-big-five",
+ "type": "post",
+ "order": 55,
+ "title": "어두운 3요인(나르시시즘·마키아벨리즘·사이코패시)과 Big Five·HEXACO의 관계",
+ "slug": "dark-triad-and-big-five",
+ "status": "publish",
+ "excerpt": "어두운 3요인은 모두 낮은 친화성과 관련되지만, 세 특성의 공통분모는 HEXACO의 정직-겸손성이 더 잘 설명합니다. 연구 수치와 상관을 읽는 법, 꼬리표를 붙이면 안 되는 이유를 정리했습니다.",
+ "meta_description": "나르시시즘·마키아벨리즘·사이코패시(어두운 3요인)와 Big Five·HEXACO의 관계를 Paulhus & Williams(2002), Lee & Ashton(2005) 등의 연구 수치로 설명합니다. 진단이 아닌 연속적 성격 경향으로 읽는 법도 다룹니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "어두운 3요인",
+  "다크 트라이어드",
+  "나르시시즘",
+  "HEXACO",
+  "정직-겸손성"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-14"
+}

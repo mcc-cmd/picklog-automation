@@ -1,0 +1,25 @@
+{
+ "key": "post-big-five-wellbeing",
+ "type": "post",
+ "order": 52,
+ "title": "성격과 행복 — Big Five와 주관적 안녕감 연구 정리",
+ "slug": "big-five-wellbeing",
+ "status": "publish",
+ "excerpt": "행복한 사람은 원래 그런 성격일까? 메타분석에서 신경성·외향성·성실성이 삶의 만족도와 정서에 가장 일관되게 관련되었습니다. 주관적 안녕감의 뜻과 연구 수치, 프로필 읽는 예시를 정리했습니다.",
+ "meta_description": "Big Five 성격과 행복(주관적 안녕감)의 관계를 DeNeve & Cooper(1998), Steel 등(2008), Anglim 등(2020) 메타분석으로 정리하고, 성격 프로필로 행복의 결을 읽는 예시와 활용법을 소개합니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "행복",
+  "주관적 안녕감",
+  "Big Five",
+  "신경성",
+  "외향성"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-14"
+}
