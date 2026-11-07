@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PICKLOG Interactive Lab
  * Description: IPIP 기반 심리테스트, 정밀 만세력 사주·운세, 사주 궁합. 숏코드: [picklog_interactive], [picklog_interactive test="love"], [picklog_fortune], [picklog_compatibility], [picklog_ipip50]
- * Version: 2.7.0
+ * Version: 2.7.1
  * Requires PHP: 7.4
  * Text Domain: picklog-interactive
  */
@@ -13,7 +13,7 @@ require_once __DIR__ . '/includes/rest.php';
 require_once __DIR__ . '/includes/updater.php';
 
 final class Picklog_Interactive_Lab {
-	const VERSION = '2.7.0';
+	const VERSION = '2.7.1';
 	const SHORTCODES = ['picklog_interactive', 'picklog_personality', 'picklog_ipip50', 'picklog_fortune', 'picklog_saju', 'picklog_compatibility', 'picklog_ttibti', 'picklog_today_tti', 'picklog_game'];
 	const TESTS = ['saju', 'compat', 'type', 'bigfive', 'love', 'relation', 'work', 'money', 'stress', 'career', 'animal'];
 
@@ -34,9 +34,31 @@ final class Picklog_Interactive_Lab {
 		add_action('astra_primary_content_top', [__CLASS__, 'category_hero'], 1);
 		add_filter('comments_open', [__CLASS__, 'disable_comments'], 20, 2);
 		add_filter('pings_open', [__CLASS__, 'disable_comments'], 20, 2);
+		add_action('template_redirect', [__CLASS__, 'gone'], 1);
 		Picklog_Lab_Settings::init();
 		Picklog_Lab_REST::init();
 		Picklog_Lab_Updater::init();
+	}
+
+	/**
+	 * 2026-11-07: 예전 쇼핑 블로그 글(지금은 비공개)로 들어오면 404 대신 410(영구 삭제)을 보냄 → 구글이 빨리 지움.
+	 * 사람에게는 사주·성격검사로 가는 안내를 보여 줌. 공개 글·페이지에는 영향 없음.
+	 */
+	static function gone() {
+		if (!is_404()) return;
+		$path = trim(rawurldecode((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH)), '/');
+		if ($path === '' || strpos($path, '/') !== false) return;
+		$p = get_page_by_path($path, OBJECT, 'post');
+		if (!$p || $p->post_status === 'publish') return;
+		status_header(410);
+		nocache_headers();
+		header('X-Robots-Tag: noindex');
+		$home = esc_url(home_url('/'));
+		echo '<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">'
+			. '<title>정리된 글 – ' . esc_html(get_bloginfo('name')) . '</title></head><body style="font-family:sans-serif;max-width:560px;margin:60px auto;padding:0 20px;line-height:1.6">'
+			. '<h1 style="font-size:22px">이 글은 정리되었어요</h1><p>PICKLOG는 이제 사주·운세와 성격 심리 콘텐츠만 다뤄요.</p>'
+			. '<p><a href="' . $home . 'big-five-test/">Big Five 성격검사</a> · <a href="' . $home . 'saju/">무료 사주 풀이</a> · <a href="' . $home . '">홈으로</a></p></body></html>';
+		exit;
 	}
 
 	static function is_test_page($post_id = 0) {
