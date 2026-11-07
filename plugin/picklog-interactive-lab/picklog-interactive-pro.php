@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PICKLOG Interactive Lab
  * Description: IPIP 기반 심리테스트, 정밀 만세력 사주·운세, 사주 궁합. 숏코드: [picklog_interactive], [picklog_interactive test="love"], [picklog_fortune], [picklog_compatibility], [picklog_ipip50]
- * Version: 2.7.1
+ * Version: 2.7.2
  * Requires PHP: 7.4
  * Text Domain: picklog-interactive
  */
@@ -13,7 +13,9 @@ require_once __DIR__ . '/includes/rest.php';
 require_once __DIR__ . '/includes/updater.php';
 
 final class Picklog_Interactive_Lab {
-	const VERSION = '2.7.1';
+	const VERSION = '2.7.2';
+	/** 애드센스 게시자 ID(사이트 head 광고 코드와 같은 값). ads.txt에 씀. */
+	const ADS_PUB = 'pub-6450428460470087';
 	const SHORTCODES = ['picklog_interactive', 'picklog_personality', 'picklog_ipip50', 'picklog_fortune', 'picklog_saju', 'picklog_compatibility', 'picklog_ttibti', 'picklog_today_tti', 'picklog_game'];
 	const TESTS = ['saju', 'compat', 'type', 'bigfive', 'love', 'relation', 'work', 'money', 'stress', 'career', 'animal'];
 
@@ -35,6 +37,7 @@ final class Picklog_Interactive_Lab {
 		add_filter('comments_open', [__CLASS__, 'disable_comments'], 20, 2);
 		add_filter('pings_open', [__CLASS__, 'disable_comments'], 20, 2);
 		add_action('template_redirect', [__CLASS__, 'gone'], 1);
+		add_action('init', [__CLASS__, 'ads_txt'], 0);
 		Picklog_Lab_Settings::init();
 		Picklog_Lab_REST::init();
 		Picklog_Lab_Updater::init();
@@ -44,6 +47,18 @@ final class Picklog_Interactive_Lab {
 	 * 2026-11-07: 예전 쇼핑 블로그 글(지금은 비공개)로 들어오면 404 대신 410(영구 삭제)을 보냄 → 구글이 빨리 지움.
 	 * 사람에게는 사주·성격검사로 가는 안내를 보여 줌. 공개 글·페이지에는 영향 없음.
 	 */
+	/** 2026-11-07: 애드센스 화면 "Ads.txt 상태: 찾을 수 없음" → /ads.txt 를 플러그인이 직접 내보냄(파일 업로드 없이). */
+	static function ads_txt() {
+		$path = (string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+		if ($path !== '/ads.txt') return;
+		$pub = preg_replace('/^ca-/', '', (string) (Picklog_Lab_Settings::get()['adsense_client'] ?? '')) ?: self::ADS_PUB;
+		status_header(200);
+		header('Content-Type: text/plain; charset=utf-8');
+		header('Cache-Control: public, max-age=86400');
+		echo 'google.com, ' . preg_replace('/[^a-z0-9\-]/', '', $pub) . ", DIRECT, f08c47fec0942fa0\n";
+		exit;
+	}
+
 	static function gone() {
 		if (!is_404()) return;
 		$path = trim(rawurldecode((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH)), '/');
