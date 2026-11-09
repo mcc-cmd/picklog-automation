@@ -35,19 +35,25 @@ Status: `live` = published on the site, `queued` = in content/posts waiting for 
 | 40 | seun-wolun (세운·월운 읽는 법, 2027 예시) | fortune | live |
 | 41 | big-five-stress-coping (성격과 스트레스 대처 연구) | psychology | live |
 | 42 | ohaeng-lacking (오행이 없을 때: 무관·무재 사주 오해) | saju-guide | live |
-| 43 | gunghap-basics (궁합 보는 법: 일간·일지·띠 궁합의 차이와 예시) | saju-guide | queued |
-| 44 | big-five-facets (Big Five 30개 하위 측면, NEO·IPIP 비교) | psychology | queued |
-| 45 | gwanseong-meaning (정관·편관 심화: 관성이 많거나 없을 때) | saju-guide | queued |
-| 46 | self-report-bias (자기 보고식 검사의 한계: 사회적 바람직성·응답 양식) | psychology | queued |
-| 47 | jaeseong-meaning (정재·편재 심화: 재성 읽는 법) | saju-guide | queued |
-| 48 | grit-vs-conscientiousness (그릿은 성실성과 다를까? 연구 정리) | psychology | queued |
-| 49 | siksang-meaning (식신·상관 심화: 식신제살·상관견관, 실제 명식) | saju-guide | done |
-| 50 | inseong-bigeop (인성·비겁 심화: 인성 과다, 비겁 과다 읽는 법) | saju-guide | done |
-| 51 | personality-heritability (성격의 유전과 환경: 쌍둥이·입양 연구) | psychology | done |
-| 52 | big-five-wellbeing (성격과 행복·주관적 안녕감 연구) | psychology | done |
-| 53 | cheongan-hap-chung (천간합·천간충: 갑기합~무계합, 실제 명식) | saju-guide | done |
-| 54 | gongmang (공망: 계산법과 해석, 순중공망 표) | saju-guide | done |
-| 55 | dark-triad-and-big-five (어두운 3요인과 Big Five·HEXACO 관계) | psychology | done |
+| 43 | gunghap-basics (궁합 보는 법: 일간·일지·띠 궁합의 차이와 예시) | saju-guide | live |
+| 44 | big-five-facets (Big Five 30개 하위 측면, NEO·IPIP 비교) | psychology | live |
+| 45 | gwanseong-meaning (정관·편관 심화: 관성이 많거나 없을 때) | saju-guide | live |
+| 46 | self-report-bias (자기 보고식 검사의 한계: 사회적 바람직성·응답 양식) | psychology | live |
+| 47 | jaeseong-meaning (정재·편재 심화: 재성 읽는 법) | saju-guide | live |
+| 48 | grit-vs-conscientiousness (그릿은 성실성과 다를까? 연구 정리) | psychology | live |
+| 49 | siksang-meaning (식신·상관 심화: 식신제살·상관견관, 실제 명식) | saju-guide | live |
+| 50 | inseong-bigeop (인성·비겁 심화: 인성 과다, 비겁 과다 읽는 법) | saju-guide | queued |
+| 51 | personality-heritability (성격의 유전과 환경: 쌍둥이·입양 연구) | psychology | queued |
+| 52 | big-five-wellbeing (성격과 행복·주관적 안녕감 연구) | psychology | queued |
+| 53 | cheongan-hap-chung (천간합·천간충: 갑기합~무계합, 실제 명식) | saju-guide | queued |
+| 54 | gongmang (공망: 계산법과 해석, 순중공망 표) | saju-guide | queued |
+| 55 | dark-triad-and-big-five (어두운 3요인과 Big Five·HEXACO 관계) | psychology | queued |
+| 56 | nabeum-ohaeng (납음오행: 60갑자 납음표와 읽는 법) | saju-guide | todo |
+| 57 | big-five-and-health (성실성·신경성과 건강 행동·수명 연구) | psychology | todo |
+| 58 | sigan-moreul-ttae (태어난 시를 모를 때: 삼주로 보는 법과 한계) | saju-guide | todo |
+| 59 | personality-and-procrastination (미루기와 성격: 메타분석 정리) | psychology | todo |
+| 60 | ohaeng-season-johu (계절과 조후: 겨울생·여름생 사주 예시) | saju-guide | todo |
+| 61 | big-five-in-couples-similarity (부부 성격 유사성과 만족도 연구) | psychology | todo |
 
 After approval: 60 ilju pages (2–3 per day), per-test landing pages, Coupang links (settings only).
 
@@ -63,3 +69,5 @@ Next: 17–28 are written (2027 띠별, gate opens 2026-11-15); keep 29–33 dri
 2026-11-03 (AdSense mid-audit): extended 1–7 and 9–15 to 2,700+ Hangul each (worked examples computed with saju-core.js, IPIP scoring examples match the code, real citations, FAQ, related links). Rewrote 2027 띠별 17–28: 2,800+ Hangul each, distinct structure and one animal-specific section each (max pairwise similarity 0.33, was ~0.62), distinct titles. All 44 posts now 2,500+ Hangul. Still blocked: adsense_client in plugin options is empty (no AdSense loader/ads.txt from the plugin) — needs the ca-pub ID from the owner. Re-apply after 17–28 finish publishing (~11/20) and Search Console shows them indexed.
 
 2026-11-05: 1–16 and 29–42 live (30 posts, plugin 2.7.0, no ERROR/WAITING in logs since 11-01). Wrote 45–48 (2,650–2,830 Hangul each; saju examples and 관성/재성 frequency stats computed with saju-core.js over 109,578 charts). Ungated queue 43–48 publishes 11-06 to 11-08; 17–28 open 2026-11-15, so 11-09 to 11-14 is empty unless 49+ are written. Next run: write 49+ in order. adsense_client still empty (owner must supply ca-pub ID).
+
+2026-11-09: 1–16, 29–49 live (37 posts, plugin 2.7.2, no ERROR/WAITING since 11-05). Queue 18 (50–55 one per day 11-10..11-14 via not_before, then 17–28 from 11-15) — above the 10 minimum, so no new posts this run. Added backlog 56–61. Queue falls below 10 around 11-16; next run: write 56+ in order. adsense_client still empty (owner must supply ca-pub ID; ads.txt depends on it).
