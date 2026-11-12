@@ -26,6 +26,7 @@
  ],
  "plugin": {
   "seo_meta": true,
+  "adsense_client": "ca-pub-6450428460470087",
   "adsense_head": true
  },
  "hide_ids": [
