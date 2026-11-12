@@ -1,0 +1,25 @@
+{
+ "key": "post-big-five-and-health",
+ "type": "post",
+ "order": 57,
+ "title": "성격과 건강·수명 — 성실성과 신경성 연구로 본 Big Five의 영향",
+ "slug": "big-five-and-health",
+ "status": "publish",
+ "excerpt": "성실성이 높은 사람은 건강 행동이 많고 평균적으로 조금 더 오래 산다는 결과가 수십 년 추적 연구에서 반복되었습니다. 터먼 연구부터 UK 바이오뱅크까지, 상관 .1의 의미를 계산 예시로 정리했습니다.",
+ "meta_description": "Big Five 성격과 건강·수명의 관계를 정리했습니다. 터먼 연구, Bogg & Roberts 메타분석, 7개 코호트 통합 분석, 건강한 신경성 개념과 UK 바이오뱅크 결과, 상관 .1을 BESD로 풀어 본 계산 예시와 습관 설계 팁을 담았습니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "성실성",
+  "신경성",
+  "성격과 건강",
+  "수명",
+  "Big Five"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-21"
+}

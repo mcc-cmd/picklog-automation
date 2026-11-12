@@ -1,0 +1,25 @@
+{
+ "key": "post-personality-and-procrastination",
+ "type": "post",
+ "order": 59,
+ "title": "미루기와 성격 — 메타분석으로 본 미루는 습관의 원인과 대처법",
+ "slug": "personality-and-procrastination",
+ "status": "publish",
+ "excerpt": "미루기와 가장 강하게 관련된 성격 특성은 낮은 성실성과 높은 충동성이고, 완벽주의는 생각보다 관련이 약합니다. 시간 동기 이론 공식으로 미루기가 끝나는 순간을 계산하고 효과가 확인된 대처법을 정리했습니다.",
+ "meta_description": "미루기(procrastination)와 성격의 관계를 Steel(2007) 메타분석으로 정리했습니다. 성실성·충동성·완벽주의의 실제 관련 크기, 시간 동기 이론 계산 예시, 기분 조절 관점, 실행 의도·자기 용서 등 연구 기반 대처법을 담았습니다.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "미루기",
+  "성실성",
+  "충동성",
+  "시간 동기 이론",
+  "Big Five"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-22"
+}
