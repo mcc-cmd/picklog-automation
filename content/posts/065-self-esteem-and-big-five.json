@@ -1,0 +1,25 @@
+{
+ "key": "post-self-esteem-and-big-five",
+ "type": "post",
+ "order": 65,
+ "title": "자존감과 성격 5요인 — 로젠버그 척도 채점법과 32만 명 연구로 본 관계",
+ "slug": "self-esteem-and-big-five",
+ "status": "publish",
+ "excerpt": "자존감은 정서 안정성·외향성과 가장 크게 관련되지만 겹치는 부분은 많아야 4분의 1입니다. 로젠버그 척도 채점 예시, Big Five 상관, 나이에 따른 변화, '자존감이 성공을 만든다'는 믿음에 대한 검토 결과를 정리했습니다.",
+ "meta_description": "자존감과 Big Five 성격의 관계를 연구로 정리했습니다. 로젠버그 자존감 척도(RSES) 역채점 계산 예시, 32만 명 표본의 상관, 생애 변화 메타분석, Baumeister 등의 검토와 자기 자비 연구까지.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "자존감",
+  "로젠버그 자존감 척도",
+  "정서 안정성",
+  "Big Five",
+  "자기 자비"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-25"
+}

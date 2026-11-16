@@ -20,7 +20,8 @@ Status: `live` = published on the site, `queued` = in content/posts waiting for 
 | 14 | sibi-unseong | saju-guide | live |
 | 15 | openness-intellect | psychology | live |
 | 16 | 2027-sinnyeon-unse (정미년 총론) | fortune | live |
-| 17–28 | 2027-<animal>-tti-unse ×12 | fortune | queued (not_before 2026-11-15) |
+| 17–20 | 2027-<rat/ox/tiger/rabbit>-tti-unse | fortune | live |
+| 21–28 | 2027-<dragon…pig>-tti-unse | fortune | queued (2/day from 11-17) |
 | 29 | mbti-vs-big-five (심화) | psychology | live |
 | 30 | jijanggan (지장간) | saju-guide | live |
 | 31 | singang-sinyak (신강·신약) | saju-guide | live |
@@ -43,23 +44,29 @@ Status: `live` = published on the site, `queued` = in content/posts waiting for 
 | 48 | grit-vs-conscientiousness (그릿은 성실성과 다를까? 연구 정리) | psychology | live |
 | 49 | siksang-meaning (식신·상관 심화: 식신제살·상관견관, 실제 명식) | saju-guide | live |
 | 50 | inseong-bigeop (인성·비겁 심화: 인성 과다, 비겁 과다 읽는 법) | saju-guide | live |
-| 51 | personality-heritability (성격의 유전과 환경: 쌍둥이·입양 연구) | psychology | queued |
-| 52 | big-five-wellbeing (성격과 행복·주관적 안녕감 연구) | psychology | queued |
+| 51 | personality-heritability (성격의 유전과 환경: 쌍둥이·입양 연구) | psychology | live |
+| 52 | big-five-wellbeing (성격과 행복·주관적 안녕감 연구) | psychology | live |
 | 53 | cheongan-hap-chung (천간합·천간충: 갑기합~무계합, 실제 명식) | saju-guide | live |
 | 54 | gongmang (공망: 계산법과 해석, 순중공망 표) | saju-guide | live |
-| 55 | dark-triad-and-big-five (어두운 3요인과 Big Five·HEXACO 관계) | psychology | queued |
-| 56 | nabeum-ohaeng (납음오행: 60갑자 납음표와 읽는 법) | saju-guide | queued |
+| 55 | dark-triad-and-big-five (어두운 3요인과 Big Five·HEXACO 관계) | psychology | live |
+| 56 | nabeum-ohaeng (납음오행: 60갑자 납음표와 읽는 법) | saju-guide | live |
 | 57 | big-five-and-health (성실성·신경성과 건강 행동·수명 연구) | psychology | queued |
 | 58 | sigan-moreul-ttae (태어난 시를 모를 때: 삼주로 보는 법과 한계) | saju-guide | queued |
 | 59 | personality-and-procrastination (미루기와 성격: 메타분석 정리) | psychology | queued |
-| 60 | ohaeng-season-johu (계절과 조후: 겨울생·여름생 사주 예시) | saju-guide | todo |
-| 61 | big-five-in-couples-similarity (부부 성격 유사성과 만족도 연구) | psychology | todo |
-| 62 | sibi-sinsal (12신살 전체표: 겁살~망신살, 년지·일지 기준 차이) | saju-guide | todo |
-| 63 | chronotype-and-personality (아침형·저녁형과 Big Five 연구) | psychology | todo |
-| 64 | gyeokguk-basics (격국 기초: 월지로 정하는 정격 8격과 예시) | saju-guide | todo |
-| 65 | self-esteem-and-big-five (자존감과 성격 5요인 연구) | psychology | todo |
+| 60 | ohaeng-season-johu (계절과 조후: 겨울생·여름생 사주 예시) | saju-guide | skipped (covered by 39 yongsin-basics 조후 section + 3 examples) |
+| 61 | big-five-in-couples-similarity (부부 성격 유사성과 만족도 연구) | psychology | skipped (covered by 32 personality-and-relationships) |
+| 62 | sibi-sinsal (12신살 전체표: 겁살~망신살, 년지·일지 기준 차이) | saju-guide | queued |
+| 63 | chronotype-and-personality (아침형·저녁형과 Big Five 연구) | psychology | queued |
+| 64 | gyeokguk-basics (격국 기초: 월지로 정하는 정격 8격과 예시) | saju-guide | queued |
+| 65 | self-esteem-and-big-five (자존감과 성격 5요인 연구) | psychology | queued |
 | 66 | jeolgi-24-and-wolju (24절기와 월주: 2027년 절입 시각표) | saju-guide | todo |
 | 67 | big-five-across-cultures (문화권별 Big Five 평균 차이와 해석의 함정) | psychology | todo |
+| 68 | cheoneul-gwiin (천을귀인·문창귀인 찾는 법과 실제 명식) | saju-guide | todo |
+| 69 | big-five-and-academic-achievement (성격과 학업 성취 메타분석) | psychology | todo |
+| 70 | yangin-goegang-baekho (양인·괴강·백호: 일주로 보는 강한 신살) | saju-guide | todo |
+| 71 | emotional-intelligence-and-big-five (정서지능은 Big Five와 다를까) | psychology | todo |
+| 72 | tojeong-bigyeol-principle (토정비결 작괘 원리와 2027년 계산 예시) | fortune | todo |
+| 73 | personality-and-social-media (성격과 SNS 사용 연구) | psychology | todo |
 
 After approval: 60 ilju pages (2–3 per day), per-test landing pages, Coupang links (settings only).
 
@@ -79,3 +86,5 @@ Next: 17–28 are written (2027 띠별, gate opens 2026-11-15); keep 29–33 dri
 2026-11-09: 1–16, 29–49 live (37 posts, plugin 2.7.2, no ERROR/WAITING since 11-05). Queue 18 (50–55 one per day 11-10..11-14 via not_before, then 17–28 from 11-15) — above the 10 minimum, so no new posts this run. Added backlog 56–61. Queue falls below 10 around 11-16; next run: write 56+ in order. adsense_client still empty (owner must supply ca-pub ID; ads.txt depends on it).
 
 2026-11-12: 1–16, 29–50, 53–54 live (40 posts, plugin 2.7.2, no ERROR/WAITING since 11-08). Queue 15 (51, 52, 55 on 11-13/14; 17–28 from 11-15, 2/day until ~11-20). Wrote 56–59 (2,560–2,790 Hangul; 56/58 computed with saju-core.js — nayin table verified against the stem+branch number formula for all 60, 58 stats over 21,915 days 1950–2009; 57/59 cited). not_before: 56→11-13 (fills the free slot), 57/58→11-21, 59→11-22, so the queue is now 19. Added backlog 62–67. Next run: write 60+ in order. adsense_client still empty (owner must supply ca-pub ID). → 2026-11-12: owner supplied ca-pub-6450428460470087, set in site.json plugin options.
+
+2026-11-16: 48 posts live (1–16, 17–20, 29–56; plugin 2.7.2, adsense_client set, no ERROR/WAITING since 11-12). Queue was 11 (21–28, 57–59). Skipped 60/61 as duplicates of 39/32. Wrote 62–65 (2,550–2,900 Hangul; 62/64 computed with saju-core.js — 12신살 table from triad rule, frequencies over 21,915 days, 격국 투출 stats over 262,980 charts; 63/65 cited). not_before 62→11-22, 63→11-23, 64→11-24, 65→11-25. Queue now 15 (lasts to ~11-25). Added backlog 68–73. Next run: write 66+ in order. 48 live posts > 30 target → owner can re-apply to AdSense once 21–28 are live (~11-20) and indexed.

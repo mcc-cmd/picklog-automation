@@ -1,0 +1,25 @@
+{
+ "key": "post-chronotype-and-personality",
+ "type": "post",
+ "order": 63,
+ "title": "아침형·저녁형과 성격 — 크로노타입과 Big Five 연구, 사회적 시차 계산법",
+ "slug": "chronotype-and-personality",
+ "status": "publish",
+ "excerpt": "아침형 성향은 성실성과 가장 뚜렷하게 관련되지만 크기는 중간 정도이고, 크로노타입은 Big Five와 상당 부분 독립적입니다. MEQ·MCTQ 측정법, 메타분석 결과, 나이와 유전, 사회적 시차 계산 예시를 정리했습니다.",
+ "meta_description": "아침형 인간·저녁형 인간과 Big Five 성격의 관계를 메타분석으로 정리했습니다. MEQ와 MCTQ 측정법, 성실성·개방성과의 관련, 20세 전후 정점, 유전 연구, 사회적 시차와 MSFsc 계산 예시까지.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "크로노타입",
+  "아침형 인간",
+  "저녁형",
+  "성실성",
+  "Big Five"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-23"
+}
