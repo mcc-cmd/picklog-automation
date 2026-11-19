@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PICKLOG Interactive Lab
  * Description: IPIP 기반 심리테스트, 정밀 만세력 사주·운세, 사주 궁합. 숏코드: [picklog_interactive], [picklog_interactive test="love"], [picklog_fortune], [picklog_compatibility], [picklog_ipip50]
- * Version: 2.7.3
+ * Version: 2.7.4
  * Requires PHP: 7.4
  * Text Domain: picklog-interactive
  */
@@ -13,7 +13,7 @@ require_once __DIR__ . '/includes/rest.php';
 require_once __DIR__ . '/includes/updater.php';
 
 final class Picklog_Interactive_Lab {
-	const VERSION = '2.7.3';
+	const VERSION = '2.7.4';
 	/** 애드센스 게시자 ID(사이트 head 광고 코드와 같은 값). ads.txt에 씀. */
 	const ADS_PUB = 'pub-6450428460470087';
 	const SHORTCODES = ['picklog_interactive', 'picklog_personality', 'picklog_ipip50', 'picklog_fortune', 'picklog_saju', 'picklog_compatibility', 'picklog_ttibti', 'picklog_today_tti', 'picklog_game'];
@@ -42,6 +42,10 @@ final class Picklog_Interactive_Lab {
 		add_action('template_redirect', [__CLASS__, 'feed_noindex'], 0);
 		add_filter('wp_sitemaps_taxonomies', [__CLASS__, 'sitemap_taxonomies']);
 		add_filter('wp_sitemaps_posts_query_args', [__CLASS__, 'sitemap_posts'], 10, 2);
+		// 사이트에 Rank Math가 켜져 있음 → Rank Math가 robots 메타와 사이트맵을 직접 만들므로 같은 규칙을 Rank Math에도
+		add_filter('rank_math/frontend/robots', [__CLASS__, 'rank_math_robots']);
+		add_filter('rank_math/sitemap/exclude_taxonomy', [__CLASS__, 'rank_math_exclude_tax'], 10, 2);
+		add_filter('rank_math/sitemap/entry', [__CLASS__, 'rank_math_entry'], 10, 3);
 		Picklog_Lab_Settings::init();
 		Picklog_Lab_REST::init();
 		Picklog_Lab_Updater::init();
@@ -70,12 +74,33 @@ final class Picklog_Interactive_Lab {
 	const NOINDEX_PAGES = ['game'];
 
 	static function robots_thin($robots) {
-		if (is_tag() || is_search() || is_date() || is_author() || (is_archive() && is_paged()) || is_page(self::NOINDEX_PAGES)) {
+		if (self::is_thin()) {
 			$robots['noindex'] = true;
 			$robots['follow'] = true;
 			unset($robots['max-image-preview']);
 		}
 		return $robots;
+	}
+
+	static function is_thin() {
+		return is_tag() || is_search() || is_date() || is_author() || (is_archive() && is_paged()) || is_page(self::NOINDEX_PAGES);
+	}
+
+	static function rank_math_robots($robots) {
+		if (!self::is_thin()) return $robots;
+		$robots = is_array($robots) ? $robots : [];
+		$robots['index'] = 'noindex';
+		$robots['follow'] = 'follow';
+		return $robots;
+	}
+
+	static function rank_math_exclude_tax($exclude, $taxonomy) {
+		return $taxonomy === 'post_tag' ? true : $exclude;
+	}
+
+	static function rank_math_entry($url, $type, $object) {
+		if ($type === 'post' && is_object($object) && ($object->post_type ?? '') === 'page' && in_array($object->post_name ?? '', self::NOINDEX_PAGES, true)) return false;
+		return $url;
 	}
 
 	static function feed_noindex() {
