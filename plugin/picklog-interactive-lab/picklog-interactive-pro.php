@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PICKLOG Interactive Lab
  * Description: IPIP 기반 심리테스트, 정밀 만세력 사주·운세, 사주 궁합. 숏코드: [picklog_interactive], [picklog_interactive test="love"], [picklog_fortune], [picklog_compatibility], [picklog_ipip50]
- * Version: 2.7.2
+ * Version: 2.7.3
  * Requires PHP: 7.4
  * Text Domain: picklog-interactive
  */
@@ -13,7 +13,7 @@ require_once __DIR__ . '/includes/rest.php';
 require_once __DIR__ . '/includes/updater.php';
 
 final class Picklog_Interactive_Lab {
-	const VERSION = '2.7.2';
+	const VERSION = '2.7.3';
 	/** 애드센스 게시자 ID(사이트 head 광고 코드와 같은 값). ads.txt에 씀. */
 	const ADS_PUB = 'pub-6450428460470087';
 	const SHORTCODES = ['picklog_interactive', 'picklog_personality', 'picklog_ipip50', 'picklog_fortune', 'picklog_saju', 'picklog_compatibility', 'picklog_ttibti', 'picklog_today_tti', 'picklog_game'];
@@ -38,6 +38,10 @@ final class Picklog_Interactive_Lab {
 		add_filter('pings_open', [__CLASS__, 'disable_comments'], 20, 2);
 		add_action('template_redirect', [__CLASS__, 'gone'], 1);
 		add_action('init', [__CLASS__, 'ads_txt'], 0);
+		add_filter('wp_robots', [__CLASS__, 'robots_thin']);
+		add_action('template_redirect', [__CLASS__, 'feed_noindex'], 0);
+		add_filter('wp_sitemaps_taxonomies', [__CLASS__, 'sitemap_taxonomies']);
+		add_filter('wp_sitemaps_posts_query_args', [__CLASS__, 'sitemap_posts'], 10, 2);
 		Picklog_Lab_Settings::init();
 		Picklog_Lab_REST::init();
 		Picklog_Lab_Updater::init();
@@ -57,6 +61,41 @@ final class Picklog_Interactive_Lab {
 		header('Cache-Control: public, max-age=86400');
 		echo 'google.com, ' . preg_replace('/[^a-z0-9\-]/', '', $pub) . ", DIRECT, f08c47fec0942fa0\n";
 		exit;
+	}
+
+	/**
+	 * 2026-11-19 서치콘솔 '크롤링됨 - 색인 안 됨' 39개 대부분이 태그 목록·피드(/tag/…/, /feed/)와 게임 페이지.
+	 * 얇은 자동 목록은 검색에서 빼고(링크는 따라가게 follow 유지), 사이트맵에서도 뺌 → 구글이 글 페이지에 집중.
+	 */
+	const NOINDEX_PAGES = ['game'];
+
+	static function robots_thin($robots) {
+		if (is_tag() || is_search() || is_date() || is_author() || (is_archive() && is_paged()) || is_page(self::NOINDEX_PAGES)) {
+			$robots['noindex'] = true;
+			$robots['follow'] = true;
+			unset($robots['max-image-preview']);
+		}
+		return $robots;
+	}
+
+	static function feed_noindex() {
+		if (is_feed()) header('X-Robots-Tag: noindex, follow');
+	}
+
+	static function sitemap_taxonomies($taxonomies) {
+		unset($taxonomies['post_tag']);
+		return $taxonomies;
+	}
+
+	static function sitemap_posts($args, $post_type) {
+		if ($post_type !== 'page') return $args;
+		$ids = [];
+		foreach (self::NOINDEX_PAGES as $slug) {
+			$p = get_page_by_path($slug);
+			if ($p) $ids[] = $p->ID;
+		}
+		if ($ids) $args['post__not_in'] = array_merge((array) ($args['post__not_in'] ?? []), $ids);
+		return $args;
 	}
 
 	static function gone() {
