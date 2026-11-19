@@ -1,0 +1,25 @@
+{
+ "key": "post-big-five-and-academic-achievement",
+ "type": "post",
+ "order": 69,
+ "title": "성격과 학업 성취 — 성실성은 지능만큼 성적을 예측할까? 메타분석 정리",
+ "slug": "big-five-and-academic-achievement",
+ "status": "publish",
+ "excerpt": "성실성은 지능과 거의 독립적으로 성적을 예측하며 대학 단계에서는 지능만큼 중요해집니다. Poropat·Mammadov 메타분석 수치, 상관 .2를 체감하는 BESD 계산표, 타인 평정 연구, 성격별 공부 전략을 정리했습니다.",
+ "meta_description": "Big Five 성격과 학업 성취의 관계를 메타분석으로 정리했습니다. 성실성 상관 .19~.27, 지능 .54와 비교, 이항 효과 크기 계산 예시, 자기 효능감·공부 습관 연구, 성격 유형별 학습 전략까지.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "성실성",
+  "학업 성취",
+  "Big Five",
+  "공부 습관",
+  "메타분석"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-27"
+}

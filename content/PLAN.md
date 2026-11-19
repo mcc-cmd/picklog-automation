@@ -21,7 +21,8 @@ Status: `live` = published on the site, `queued` = in content/posts waiting for 
 | 15 | openness-intellect | psychology | live |
 | 16 | 2027-sinnyeon-unse (정미년 총론) | fortune | live |
 | 17–20 | 2027-<rat/ox/tiger/rabbit>-tti-unse | fortune | live |
-| 21–28 | 2027-<dragon…pig>-tti-unse | fortune | queued (2/day from 11-17) |
+| 21–26 | 2027-<dragon…rooster>-tti-unse | fortune | live |
+| 27–28 | 2027-<dog/pig>-tti-unse | fortune | queued (11-20) |
 | 29 | mbti-vs-big-five (심화) | psychology | live |
 | 30 | jijanggan (지장간) | saju-guide | live |
 | 31 | singang-sinyak (신강·신약) | saju-guide | live |
@@ -59,14 +60,18 @@ Status: `live` = published on the site, `queued` = in content/posts waiting for 
 | 63 | chronotype-and-personality (아침형·저녁형과 Big Five 연구) | psychology | queued |
 | 64 | gyeokguk-basics (격국 기초: 월지로 정하는 정격 8격과 예시) | saju-guide | queued |
 | 65 | self-esteem-and-big-five (자존감과 성격 5요인 연구) | psychology | queued |
-| 66 | jeolgi-24-and-wolju (24절기와 월주: 2027년 절입 시각표) | saju-guide | todo |
-| 67 | big-five-across-cultures (문화권별 Big Five 평균 차이와 해석의 함정) | psychology | todo |
-| 68 | cheoneul-gwiin (천을귀인·문창귀인 찾는 법과 실제 명식) | saju-guide | todo |
-| 69 | big-five-and-academic-achievement (성격과 학업 성취 메타분석) | psychology | todo |
+| 66 | jeolgi-24-and-wolju (24절기와 월주: 2027년 절입 시각표) | saju-guide | queued |
+| 67 | big-five-across-cultures (문화권별 Big Five 평균 차이와 해석의 함정) | psychology | queued |
+| 68 | cheoneul-gwiin (천을귀인·문창귀인 찾는 법과 실제 명식) | saju-guide | queued |
+| 69 | big-five-and-academic-achievement (성격과 학업 성취 메타분석) | psychology | queued |
 | 70 | yangin-goegang-baekho (양인·괴강·백호: 일주로 보는 강한 신살) | saju-guide | todo |
 | 71 | emotional-intelligence-and-big-five (정서지능은 Big Five와 다를까) | psychology | todo |
 | 72 | tojeong-bigyeol-principle (토정비결 작괘 원리와 2027년 계산 예시) | fortune | todo |
 | 73 | personality-and-social-media (성격과 SNS 사용 연구) | psychology | todo |
+| 74 | wonjin-gwimun (원진살·귀문관살: 표와 실제 의미, 공포 마케팅 바로잡기) | saju-guide | todo |
+| 75 | big-five-and-leadership (성격과 리더십 출현·효과성 메타분석) | psychology | todo |
+| 76 | daeun-su-calculation (대운수 계산법: 순행·역행과 3일=1년 규칙 예시) | saju-guide | todo |
+| 77 | personality-and-money (성격과 소비·저축·재무 행동 연구) | psychology | todo |
 
 After approval: 60 ilju pages (2–3 per day), per-test landing pages, Coupang links (settings only).
 
@@ -88,3 +93,5 @@ Next: 17–28 are written (2027 띠별, gate opens 2026-11-15); keep 29–33 dri
 2026-11-12: 1–16, 29–50, 53–54 live (40 posts, plugin 2.7.2, no ERROR/WAITING since 11-08). Queue 15 (51, 52, 55 on 11-13/14; 17–28 from 11-15, 2/day until ~11-20). Wrote 56–59 (2,560–2,790 Hangul; 56/58 computed with saju-core.js — nayin table verified against the stem+branch number formula for all 60, 58 stats over 21,915 days 1950–2009; 57/59 cited). not_before: 56→11-13 (fills the free slot), 57/58→11-21, 59→11-22, so the queue is now 19. Added backlog 62–67. Next run: write 60+ in order. adsense_client still empty (owner must supply ca-pub ID). → 2026-11-12: owner supplied ca-pub-6450428460470087, set in site.json plugin options.
 
 2026-11-16: 48 posts live (1–16, 17–20, 29–56; plugin 2.7.2, adsense_client set, no ERROR/WAITING since 11-12). Queue was 11 (21–28, 57–59). Skipped 60/61 as duplicates of 39/32. Wrote 62–65 (2,550–2,900 Hangul; 62/64 computed with saju-core.js — 12신살 table from triad rule, frequencies over 21,915 days, 격국 투출 stats over 262,980 charts; 63/65 cited). not_before 62→11-22, 63→11-23, 64→11-24, 65→11-25. Queue now 15 (lasts to ~11-25). Added backlog 68–73. Next run: write 66+ in order. 48 live posts > 30 target → owner can re-apply to AdSense once 21–28 are live (~11-20) and indexed.
+
+2026-11-19: 64 posts live (1–26, 29–56; plugin 2.7.2, adsense_client set, no ERROR/WAITING since 11-15). Published since 11-16: 2027 용·뱀·말·양·원숭이·닭띠 (21–26). Queue was 9 (27–28, 57–59, 62–65). Wrote 66–69 (2,650–2,830 Hangul; 66 절입 시각 from solar-terms.json + 중기 via PyEphem, cross-checked within 1 min; 68 귀인 frequencies computed with saju-core.js over 21,915 days; 67/69 cited). not_before 66→11-25, 67/68→11-26, 69→11-27. Queue now 13 (lasts to ~11-27). Added backlog 74–77. Next run: write 70+ in order. 64 live posts → owner should re-apply to AdSense once Search Console shows the posts indexed.

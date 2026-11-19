@@ -1,0 +1,25 @@
+{
+ "key": "post-big-five-across-cultures",
+ "type": "post",
+ "order": 67,
+ "title": "문화권별 Big Five 차이 — 56개국 연구와 국가 평균 비교의 3가지 함정",
+ "slug": "big-five-across-cultures",
+ "status": "publish",
+ "excerpt": "다섯 요인 구조는 여러 문화에서 대체로 재현되지만 국가 평균 차이는 작고, 참조 집단 효과와 응답 습관에 크게 흔들립니다. 56개국 연구, 성실성의 역설, 묵종 경향 계산 예시와 효과 크기 해석표를 정리했습니다.",
+ "meta_description": "나라별 성격 차이는 실제로 있을까? Big Five 국제 비교 연구(Schmitt 56개국, Terracciano 국민성 연구, Heine 성실성 역설)와 참조 집단 효과, 응답 양식 계산 예시, 효과 크기 겹침 비율표까지.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "Big Five",
+  "문화 차이",
+  "국민성",
+  "참조 집단 효과",
+  "응답 양식"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-26"
+}
