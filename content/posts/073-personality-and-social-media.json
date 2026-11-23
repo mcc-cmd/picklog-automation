@@ -1,0 +1,25 @@
+{
+ "key": "post-personality-and-social-media",
+ "type": "post",
+ "order": 73,
+ "title": "성격과 SNS 사용 — 문제적 사용은 외향성이 아니라 신경성·성실성과 관련",
+ "slug": "personality-and-social-media",
+ "status": "publish",
+ "excerpt": "외향적인 사람이 SNS에 빠진다는 통념과 달리, 113개 표본 메타분석에서 문제적 SNS 사용은 신경성(r=.21)·낮은 성실성(r=−.16)과 관련되었습니다. 사용 목적별 차이, BESD 계산 예시, '좋아요'로 성격을 맞힌 연구를 정리했습니다.",
+ "meta_description": "Big Five 성격과 SNS 사용의 관계를 메타분석으로 정리했습니다. 사용 목적별 성격 차이, 공유 행동의 작은 효과, 문제적 사용과 신경성·성실성 상관, 60 대 40 계산 예시, 좋아요 기반 성격 예측 연구까지.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "SNS",
+  "소셜 미디어",
+  "신경성",
+  "성실성",
+  "Big Five"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-29"
+}

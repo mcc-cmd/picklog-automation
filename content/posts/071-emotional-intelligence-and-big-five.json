@@ -1,0 +1,25 @@
+{
+ "key": "post-emotional-intelligence-and-big-five",
+ "type": "post",
+ "order": 71,
+ "title": "정서지능(EQ)은 Big Five와 다를까? 메타분석으로 본 겹침의 크기",
+ "slug": "emotional-intelligence-and-big-five",
+ "status": "publish",
+ "excerpt": "설문형 정서지능은 성격 일반 요인과 r≈.85로 크게 겹치고, 문제 풀이형 능력 정서지능은 r≈.28에 그칩니다. 세 가지 EQ 모델, 공유 변량 계산 예시, 학업·직무 성과 연구, 내 점수 읽는 법을 정리했습니다.",
+ "meta_description": "정서지능(EQ)과 Big Five 성격의 관계를 메타분석으로 정리했습니다. 능력·특성·혼합 모델 비교, van der Linden(2017) r=.85 vs .28, 공유 변량·같은 쪽 확률 계산 예시, MacCann(2020) 학업 성취 연구까지.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "정서지능",
+  "EQ",
+  "Big Five",
+  "특성 정서지능",
+  "메타분석"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-28"
+}

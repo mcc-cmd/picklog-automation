@@ -22,7 +22,7 @@ Status: `live` = published on the site, `queued` = in content/posts waiting for 
 | 16 | 2027-sinnyeon-unse (정미년 총론) | fortune | live |
 | 17–20 | 2027-<rat/ox/tiger/rabbit>-tti-unse | fortune | live |
 | 21–26 | 2027-<dragon…rooster>-tti-unse | fortune | live |
-| 27–28 | 2027-<dog/pig>-tti-unse | fortune | queued (11-20) |
+| 27–28 | 2027-<dog/pig>-tti-unse | fortune | live |
 | 29 | mbti-vs-big-five (심화) | psychology | live |
 | 30 | jijanggan (지장간) | saju-guide | live |
 | 31 | singang-sinyak (신강·신약) | saju-guide | live |
@@ -51,27 +51,31 @@ Status: `live` = published on the site, `queued` = in content/posts waiting for 
 | 54 | gongmang (공망: 계산법과 해석, 순중공망 표) | saju-guide | live |
 | 55 | dark-triad-and-big-five (어두운 3요인과 Big Five·HEXACO 관계) | psychology | live |
 | 56 | nabeum-ohaeng (납음오행: 60갑자 납음표와 읽는 법) | saju-guide | live |
-| 57 | big-five-and-health (성실성·신경성과 건강 행동·수명 연구) | psychology | queued |
-| 58 | sigan-moreul-ttae (태어난 시를 모를 때: 삼주로 보는 법과 한계) | saju-guide | queued |
-| 59 | personality-and-procrastination (미루기와 성격: 메타분석 정리) | psychology | queued |
+| 57 | big-five-and-health (성실성·신경성과 건강 행동·수명 연구) | psychology | live |
+| 58 | sigan-moreul-ttae (태어난 시를 모를 때: 삼주로 보는 법과 한계) | saju-guide | live |
+| 59 | personality-and-procrastination (미루기와 성격: 메타분석 정리) | psychology | live |
 | 60 | ohaeng-season-johu (계절과 조후: 겨울생·여름생 사주 예시) | saju-guide | skipped (covered by 39 yongsin-basics 조후 section + 3 examples) |
 | 61 | big-five-in-couples-similarity (부부 성격 유사성과 만족도 연구) | psychology | skipped (covered by 32 personality-and-relationships) |
-| 62 | sibi-sinsal (12신살 전체표: 겁살~망신살, 년지·일지 기준 차이) | saju-guide | queued |
-| 63 | chronotype-and-personality (아침형·저녁형과 Big Five 연구) | psychology | queued |
+| 62 | sibi-sinsal (12신살 전체표: 겁살~망신살, 년지·일지 기준 차이) | saju-guide | live |
+| 63 | chronotype-and-personality (아침형·저녁형과 Big Five 연구) | psychology | live |
 | 64 | gyeokguk-basics (격국 기초: 월지로 정하는 정격 8격과 예시) | saju-guide | queued |
 | 65 | self-esteem-and-big-five (자존감과 성격 5요인 연구) | psychology | queued |
 | 66 | jeolgi-24-and-wolju (24절기와 월주: 2027년 절입 시각표) | saju-guide | queued |
 | 67 | big-five-across-cultures (문화권별 Big Five 평균 차이와 해석의 함정) | psychology | queued |
 | 68 | cheoneul-gwiin (천을귀인·문창귀인 찾는 법과 실제 명식) | saju-guide | queued |
 | 69 | big-five-and-academic-achievement (성격과 학업 성취 메타분석) | psychology | queued |
-| 70 | yangin-goegang-baekho (양인·괴강·백호: 일주로 보는 강한 신살) | saju-guide | todo |
-| 71 | emotional-intelligence-and-big-five (정서지능은 Big Five와 다를까) | psychology | todo |
-| 72 | tojeong-bigyeol-principle (토정비결 작괘 원리와 2027년 계산 예시) | fortune | todo |
-| 73 | personality-and-social-media (성격과 SNS 사용 연구) | psychology | todo |
-| 74 | wonjin-gwimun (원진살·귀문관살: 표와 실제 의미, 공포 마케팅 바로잡기) | saju-guide | todo |
+| 70 | yangin-goegang-baekho (양인·괴강·백호: 일주로 보는 강한 신살) | saju-guide | queued |
+| 71 | emotional-intelligence-and-big-five (정서지능은 Big Five와 다를까) | psychology | queued |
+| 72 | tojeong-bigyeol-principle (토정비결 작괘 원리와 2027년 계산 예시) | fortune | todo (deferred: 태세수·월건수·일진수 tables differ between sources; verify from a primary source before writing) |
+| 73 | personality-and-social-media (성격과 SNS 사용 연구) | psychology | queued |
+| 74 | wonjin-gwimun (원진살·귀문관살: 표와 실제 의미, 공포 마케팅 바로잡기) | saju-guide | queued |
 | 75 | big-five-and-leadership (성격과 리더십 출현·효과성 메타분석) | psychology | todo |
 | 76 | daeun-su-calculation (대운수 계산법: 순행·역행과 3일=1년 규칙 예시) | saju-guide | todo |
 | 77 | personality-and-money (성격과 소비·저축·재무 행동 연구) | psychology | todo |
+| 78 | sipseong-combinations (십성 조합 읽기: 재생관·관인상생·식신생재, 실제 명식) | saju-guide | todo |
+| 79 | personality-and-loneliness (외로움과 성격 5요인 연구) | psychology | todo |
+| 80 | ohaeng-lucky-color-number (행운의 색·숫자: 오행 배속 원리와 속설 구분) | saju-guide | todo |
+| 81 | big-five-and-humor (유머 스타일과 성격 연구) | psychology | todo |
 
 After approval: 60 ilju pages (2–3 per day), per-test landing pages, Coupang links (settings only).
 
@@ -97,3 +101,5 @@ Next: 17–28 are written (2027 띠별, gate opens 2026-11-15); keep 29–33 dri
 2026-11-19: 64 posts live (1–26, 29–56; plugin 2.7.2, adsense_client set, no ERROR/WAITING since 11-15). Published since 11-16: 2027 용·뱀·말·양·원숭이·닭띠 (21–26). Queue was 9 (27–28, 57–59, 62–65). Wrote 66–69 (2,650–2,830 Hangul; 66 절입 시각 from solar-terms.json + 중기 via PyEphem, cross-checked within 1 min; 68 귀인 frequencies computed with saju-core.js over 21,915 days; 67/69 cited). not_before 66→11-25, 67/68→11-26, 69→11-27. Queue now 13 (lasts to ~11-27). Added backlog 74–77. Next run: write 70+ in order. 64 live posts → owner should re-apply to AdSense once Search Console shows the posts indexed.
 
 2026-11-19 (Search Console check by owner): indexed 208, not indexed 102 = 404 17 · discovered-not-indexed 46 · crawled-not-indexed 39 (mostly /tag/…/, /tag/…/feed/, /feed/, plus /game/, /ttibti/, /gunghap-basics/, /2027-rat-tti-unse/) · robots 0. Plugin 2.7.3: noindex,follow for tag/search/date/author/paged archives and the /game/ page, X-Robots-Tag noindex on feeds, tags and /game/ removed from wp-sitemap. Re-apply to AdSense after 27–28 are live (11-20) and the crawled-not-indexed count drops; owner to re-check Search Console ~11-23.
+
+2026-11-23: 61 posts live (1–28, 29–59, 62–63; plugin 2.7.4, adsense_client set, no ERROR/WAITING since 11-19). Published since 11-19: 27–28 (2027 개·돼지띠), 57, 58, 59, 62, 63. Queue was 6 (64–69). Wrote 70, 71, 73, 74 (2,650–3,030 Hangul; 70/74 computed with saju-core.js — 양인 from the 12운성 제왕 function, 괴강/백호/원진/귀문 frequencies over 21,915 days with uniform hour; 71/73 cited, key numbers checked against the papers' abstracts). 72 (토정비결) deferred until the 작괘 tables are verified from a primary source. not_before 70/71→11-28, 73→11-29, 74→11-30. Queue now 10 (lasts to ~11-30). Added backlog 78–81. Next run: write 72 (if verified) or 75+ in order. 61 live posts → AdSense re-application is due once Search Console shows them indexed.
