@@ -1,0 +1,25 @@
+{
+ "key": "post-personality-and-money",
+ "type": "post",
+ "order": 77,
+ "title": "성격과 돈 — 성실성·신경성·친화성은 저축과 소득에 어떤 영향을 줄까",
+ "slug": "personality-and-money",
+ "status": "publish",
+ "excerpt": "어린 시절 자기 통제력이 32세의 재정 상태를 예측한 더니든 연구, 계획 성향과 자산, 친화성과 소득 연구를 정리하고, 월 30만 원 자동이체와 남는 돈 저축을 3년 복리로 비교했습니다.",
+ "meta_description": "Big Five 성격과 소비·저축·소득의 관계를 연구로 정리했습니다. 자기 통제력과 재정(Moffitt 외 2011), 돈 관리 행동과 성실성·신경성, 친화성과 소득, 자동이체 계산 예시와 성격별 돈 관리 팁까지.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "돈 관리",
+  "저축",
+  "성실성",
+  "친화성",
+  "Big Five"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-29"
+}

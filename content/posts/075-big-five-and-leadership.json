@@ -1,0 +1,25 @@
+{
+ "key": "post-big-five-and-leadership",
+ "type": "post",
+ "order": 75,
+ "title": "성격과 리더십 — 리더로 뽑히는 성격과 잘 이끄는 성격은 다르다 (메타분석 정리)",
+ "slug": "big-five-and-leadership",
+ "status": "publish",
+ "excerpt": "외향성(.31)·성실성(.28)·개방성(.24)은 리더십과 관련되지만, 나르시시즘은 리더 출현(ρ=.16)과만 관련되고 효과성(ρ=.03)과는 무관했습니다. 출현과 효과성의 차이, BESD 계산 예시, 내향적 리더 연구를 정리했습니다.",
+ "meta_description": "Big Five 성격과 리더십 메타분석을 정리했습니다. Judge 외(2002)의 특성별 상관, 리더 출현과 효과성의 차이, 나르시시즘의 역U자 관계, 행동이 성격보다 효과성을 더 설명한 연구, 내향적 리더가 유리한 조건까지.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "리더십",
+  "외향성",
+  "성실성",
+  "나르시시즘",
+  "Big Five"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-11-27"
+}

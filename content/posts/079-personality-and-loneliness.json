@@ -1,0 +1,25 @@
+{
+ "key": "post-personality-and-loneliness",
+ "type": "post",
+ "order": 79,
+ "title": "외로움과 성격 — 113개 연구 메타분석으로 본 외향성·신경성과 외로움",
+ "slug": "personality-and-loneliness",
+ "status": "publish",
+ "excerpt": "외로움은 낮은 외향성(r=−.37)·높은 신경성(r=.36)과 가장 강하게 관련되었습니다(113개 연구, 93,668명). 설명량·BESD 계산, 외로움과 건강, 효과가 컸던 개입 방법과 생각 점검 예시를 정리했습니다.",
+ "meta_description": "외로움과 Big Five 성격의 관계를 메타분석으로 정리했습니다. 특성별 상관과 해석, 사회적 고립과 외로움의 차이, 사망 위험과의 관련, 사회적 인지 개입의 효과, 답장이 없을 때의 생각 점검 예시까지.",
+ "categories": [
+  {
+   "name": "성격 심리",
+   "slug": "psychology"
+  }
+ ],
+ "tags": [
+  "외로움",
+  "외향성",
+  "신경성",
+  "인간관계",
+  "Big Five"
+ ],
+ "comment_status": "closed",
+ "not_before": "2026-12-01"
+}
